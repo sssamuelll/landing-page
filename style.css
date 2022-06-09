@@ -1,0 +1,515 @@
+.code-container {
+  resize: both;
+  overflow: hidden;
+  margin: auto;
+  width: 80vw;
+  height: 80vh;
+  min-width: 420px;
+  min-height: 255px;
+  position: relative;
+  --glow-margin: 70px;
+  filter: drop-shadow(0 0 75px rgb(128 0 255 / 0.25));
+}
+
+.code-container::before {
+  content: attr(content);
+  position: absolute;
+  bottom: 90px;
+  right: 90px;
+  z-index: 999;
+  color: rgb(255 200 255 / 0.5);
+  text-shadow: 0 0 12px rebeccapurple;
+  letter-spacing: 0.1em;
+}
+
+.code-container::after {
+  content: "";
+  background: linear-gradient(
+    to right,
+    transparent,
+    black 25px, black 110px,
+    transparent 110px 175px,
+    black 175px, black calc(100% - 25px),
+    transparent
+  );
+  position: absolute;
+  top: 125px;
+  left: var(--glow-margin);
+  right: var(--glow-margin);
+  height: 4px;
+  display: block;
+  z-index: 90;
+  opacity: 0.5;
+}
+
+.glow-container {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  z-index: 2;
+  pointer-events: none;
+  --glow: drop-shadow(0 0 1px violet);
+  filter: var(--glow) brightness(1.5) drop-shadow(0 0 10px violet);
+}
+
+.augs {
+  --aug-rect-l1: initial;
+  --aug-l1-width: 110px;
+  --aug-l1-height: 4px;
+  --aug-l-center: 57px;
+  
+  --aug-rect-r1: initial;
+  --aug-r1-width: (100% - 125px - 50px);
+  --aug-r1-height: 4px;
+  --aug-r-center: 57px;
+  
+  --aug-clip-tr1: initial;
+  --aug-tr1-alt-join-out: initial;
+  --aug-tr1: 17px;
+  --aug-clip-tr2: initial;
+  --aug-tr2: 17px;
+  --aug-tr-extend1: 50px;
+  
+  --aug-round-tl1: initial;
+  --aug-tl1: 8px;
+  --aug-round-br1: initial;
+  --aug-br1: 8px;
+  margin: auto;
+  width: calc(100% - var(--glow-margin) * 2);
+  height: calc(100% - var(--glow-margin) * 2);
+}
+
+.glow-container .augs {
+  --aug-border: initial;
+  --aug-border-all: 2px;
+  --aug-border-bg: linear-gradient(to bottom left, rebeccapurple, orange);
+}
+
+section.augs {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  --aug-inlay: initial;
+  --aug-inlay-all: 2px;
+  --aug-inlay-bg: url(http://augmented-ui.com/img/propjockey.png)
+    center 70% / auto 70% no-repeat;
+  --aug-inlay-opacity: 0.25;
+}
+section.augs::before {
+  filter: brightness(0.2) blur(10px);
+}
+
+.dots {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 110px;
+  height: 50px;
+  --red: #fc199a;
+  --yellow: #ffcc00;
+  --green: #61e2ff;
+  --close: radial-gradient(circle, var(--red), var(--red) 7px, transparent 8px);
+  --min: radial-gradient(circle, var(--yellow), var(--yellow) 7px, transparent 8px);
+  --max: radial-gradient(circle, var(--green), var(--green) 7px, transparent 8px);
+  background: var(--close) -28px no-repeat,
+              var(--min) -2px no-repeat,
+              var(--max) 24px no-repeat;
+  filter: brightness(0.5);
+  opacity: 0.75;
+  cursor: pointer;
+  border: none;
+}
+
+input {
+  position: absolute;
+  top: 17px;
+  left: 120px;
+  width: calc(100% - 240px);
+  background: transparent;
+  color: rgb(255 200 255 / 0.5);
+  text-shadow: 0 0 12px rebeccapurple;
+  border: none;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.code {
+  position: absolute;
+  inset: 80px 10px 10px 10px;
+  font-size: 20px;
+  color: white;
+  filter: brightness(1.2);
+}
+.code * {
+  font-size: 18px;
+  font-weight: normal;
+  color: #b5b4b6;
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  width: 100vw;
+  --c: rgb(0 0 0 / 0.95);
+  --bgb: linear-gradient(var(--c), var(--c));
+  --bg: repeating-conic-gradient(
+    from 7.5deg at center center,
+    hsl(200, 100%, 0%) 0deg 15deg,
+    hsl(200, 100%, 60%) 10deg 30deg
+  );
+  background: var(--bgb), var(--bg), black;
+}
+
+* {
+  font: normal 1em sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* https://marketplace.visualstudio.com/items?itemName=webrender.synthwave-x-fluoromachine */
+.bg {
+  background: repeating-linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.03) 0px 2px,
+    transparent 2px 4px
+  ),
+  linear-gradient(to bottom, #200933 75%, #3d0b43);
+}
+.bg::after{
+  content:'';
+  height:50%;
+  width:100%;
+  display:block;
+  background-image:linear-gradient(90deg, rgba(252,25,154,.1) 1px, rgba(0,0,0,0) 1px), linear-gradient(0deg, rgba(252,25,154,.1) 1px, rgba(0,0,0,0) 1px);
+  background-position:bottom;
+  background-repeat:repeat;
+  background-size:20px 20px;
+  left: -25px;
+  position: absolute;
+  pointer-events: none;
+  bottom: 0;
+  transform: perspective(100px) rotateX(60deg);
+  z-index: 0;
+}
+
+.CodeMirror-gutters {
+  background: transparent;
+  border: none;
+  margin-right: 15px;
+}
+.CodeMirror {
+  height: 100%;
+  background: transparent;
+}
+.CodeMirror-linenumber {
+  padding-right: 1em;
+}
+.CodeMirror-overlayscroll-horizontal div,
+.CodeMirror-overlayscroll-vertical div {
+  background: rgba(153, 99, 255, 0.5);
+}
+.CodeMirror-scrollbar-filler { display: none!important; }
+
+/* codepen's highcontrast-dark theme */
+.cm-header{font-weight:700}.cm-strong{font-weight:700}.cm-em{font-style:italic}:root{--editor-top-bar-background: black;--tab-bg: #131417;--tab-border-color: #2a2c33;--resizer-background: var(--editor-top-bar-background);--resizer-border: #242424}.sidebar-false .main-header,.sidebar-false .main-header .header-wrap,.editor-footer{background:var(--editor-top-bar-background)}.CodeMirror-cursor{border-left-color:#fff!important}.CodeMirror-selected{background:rgba(255,255,255,.05)}.CodeMirror-focused .CodeMirror-selected{background:rgba(255,255,255,.1)}.CodeMirror-matchingbracket{border-bottom:1px solid rgba(255,255,255,.5)}.CodeMirror-matchingtag{border-bottom:1px solid rgba(255,255,255,.3)}.cm-searching{background:#000;outline:2px solid rgba(255,255,255,.25)}.CodeMirror-hints,.emmet-abbreviation-preview{border:1px solid #5a5f73;background:#1e1f26}.CodeMirror-hint{color:#fff}li.CodeMirror-hint-active{background:#c7c9d3;color:#000}.project-editor-warning{background:rgba(255,255,255,.1)}.editor-footer{border-top-color:var(--resizer-border,var(--cp-color-6))}.cm-keyword{color:#ffdd40}.cm-atom{color:#a3d65a}.box-html .cm-atom{color:#ff3c41}.cm-def{color:#0ebeff}.cm-variable{color:#c7c9d3}.cm-variable-2{color:#47cf73}.cm-variable-3{color:#fff}.cm-header{color:#ff3c41}.cm-number{color:#2bc7b9}.cm-property{color:#5e91f2}.cm-attribute{color:#e3e4e8}.cm-builtin{color:#ae63e4}.cm-qualifier{color:#ffdd40}.cm-operator{color:#47cf73}.cm-meta{color:#0ebeff}.cm-string{color:#2bc7b9}.cm-string-2{color:#d75093}.cm-tag{color:#ffdd40}.box-css .cm-tag{color:#ff8d41}.cm-tag.cm-bracket{color:#9b9dad}.cm-comment{color:#88afbf}body.editor{background:#131417}.box.box.box,.editor .top-boxes,.CodeMirror-gutter-wrapper,body.project .editor-pane,body.project .editor{background:#131417}.box.box.box pre,.editor .top-boxes pre,.CodeMirror-gutter-wrapper pre,body.project .editor-pane pre,body.project .editor pre{color:#d5d7de}.CodeMirror-guttermarker-subtle,.CodeMirror-linenumber{color:rgba(113,119,144,.6)}#output pre::-webkit-scrollbar,#output iframe::-webkit-scrollbar{width:.5em;height:.5em}#output pre::-webkit-scrollbar-thumb,#output iframe::-webkit-scrollbar-thumb{background:#373c49}#output pre::-webkit-scrollbar-track,#output iframe::-webkit-scrollbar-track{background:0 0}.CodeMirror-simplescroll-horizontal div,.CodeMirror-simplescroll-vertical div{background:#373c49}.powers .mini-button{background:#444857}.powers .mini-button:hover,.powers .mini-button:focus{background:#c7c9d3}.powers .mini-button:hover svg,.powers .mini-button:focus svg{fill:#000}
+
+/* theme overrides original source */
+/* https://marketplace.visualstudio.com/items?itemName=webrender.synthwave-x-fluoromachine */
+/* I just ported it to codemirror */
+
+.highcontrast-dark .cm-header {
+  font-weight: bold
+}
+
+.highcontrast-dark .cm-strong {
+  font-weight: bold
+}
+
+.highcontrast-dark .cm-em {
+  font-style: italic
+}
+
+.highcontrast-dark .CodeMirror-cursor {
+  border-left-color: white !important
+}
+
+.highcontrast-dark .CodeMirror-selected {
+  background: rgba(255,255,255,0.05)
+}
+
+.highcontrast-dark .CodeMirror-focused .CodeMirror-selected {
+  background: rgba(255,255,255,0.1)
+}
+
+.highcontrast-dark .CodeMirror-matchingbracket {
+  border-bottom: 1px solid rgba(255,255,255,0.5)
+}
+
+.highcontrast-dark .CodeMirror-matchingtag {
+  border-bottom: 1px solid rgba(255,255,255,0.3)
+}
+
+.highcontrast-dark .powers {
+  border-bottom: 1px solid rgba(255,255,255,0.05)
+}
+
+.highcontrast-dark .cm-searching {
+  background: black;
+  outline: 2px solid rgba(255,255,255,0.25)
+}
+
+.highcontrast-dark .CodeMirror-hints,
+.highcontrast-dark .emmet-abbreviation-preview {
+  border: 1px solid #5a5f73;
+  background: #1e1f26
+}
+
+.highcontrast-dark .CodeMirror-hint {
+  color: white
+}
+
+.highcontrast-dark li.CodeMirror-hint-active {
+  background: #c7c9d3;
+  color: black
+}
+
+.highcontrast-dark .project-editor-warning {
+  background: rgba(255,255,255,0.1)
+}
+
+.highcontrast-dark .cm-atom {
+  color: #9963ff;
+}
+
+.highcontrast-dark .box-html .cm-atom {
+  color: #ff3c41
+}
+
+.highcontrast-dark .cm-def,
+.highcontrast-dark .cm-variable-2,
+.highcontrast-dark .cm-variable,
+.highcontrast-dark .box-js .cm-variable + .cm-property {
+  color: #61e2ff;
+  text-shadow: 0 0 2px #001716, 0 0 5px #03edf933, 0 0 10px #ffff6633;
+}
+
+.highcontrast-dark .cm-header {
+  color: #ff3c41
+}
+.highcontrast-dark .cm-builtin {
+  color: #ae63e4
+}
+
+.highcontrast-dark .cm-number {
+  color: #9963ff;
+}
+
+
+.highcontrast-dark .cm-operator,
+.highcontrast-dark .cm-variable-3,
+.highcontrast-dark .cm-attribute,
+.highcontrast-dark .cm-property,
+.highcontrast-dark .cm-keyword,
+.highcontrast-dark .presentation > .cm-def,
+.highcontrast-dark .cm-qualifier {
+  color: #fc199a;
+  text-shadow: 0 0 2px #393a33, 0 0 35px #ffffff44, 0 0 10px #fc199a, 0 0 2px #fc199a;
+}
+.highcontrast-dark .cm-operator,
+.highcontrast-dark .cm-variable-3,
+.highcontrast-dark .cm-attribute,
+.highcontrast-dark .cm-property {
+  font-style: italic;
+}
+
+.highcontrast-dark .cm-meta,
+.highcontrast-dark .cm-meta + .cm-property,
+.highcontrast-dark .cm-string,
+.highcontrast-dark .cm-string-2 {
+  color: #9963ff;
+  text-shadow: none;
+}
+
+.highcontrast-dark .cm-tag,
+.highcontrast-dark .cm-callee,
+.highcontrast-dark .box-css .cm-tag,
+.highcontrast-dark .cm-tag.cm-bracket,
+.highcontrast-dark .box-js .cm-property  {
+  color: #ffcc00;
+  text-shadow: 0 0 2px #100c0f, 0 0 3px #ffaa0099, 0 0 5px #ffaa0099, 0 0 10px #ffaa0099;
+  font-style: italic;
+}
+
+.highcontrast-dark .cm-comment {
+  font-style: italic;
+  color: #9963ff99;
+  text-shadow: 0 0 2px #001716, 0 0 5px #03edf933, 0 0 10px #ffff6633;
+}
+
+body.editor.highcontrast-dark {
+  background: #241b2f;
+}
+
+.highcontrast-dark .box.box.box,
+.editor.highcontrast-dark .top-boxes,
+.highcontrast-dark .CodeMirror-gutter-wrapper,
+body.project.highcontrast-dark .editor-pane,
+body.project.highcontrast-dark .editor {
+  background: none;
+}
+.editor.highcontrast-dark .top-boxes {
+  --swxfm__c: rgba(153, 99, 255);
+  background: repeating-linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.03) 0px 2px,
+    transparent 2px 4px
+  ),
+  linear-gradient(to bottom, #200933 75%, #3d0b43);
+}
+.editor.highcontrast-dark .top-boxes:after{
+  content:'';
+  height:300px;
+  width:100%;
+  display:block;
+  background-image:linear-gradient(90deg, rgba(252,25,154,.1) 1px, rgba(0,0,0,0) 1px), linear-gradient(0deg, rgba(252,25,154,.1) 1px, rgba(0,0,0,0) 1px);
+  background-position:bottom;
+  background-repeat:repeat;
+  background-size:20px 20px;
+  left: -25px;
+  position: absolute;
+  pointer-events: none;
+  bottom: 0;
+  transform: perspective(100px) rotateX(60deg);
+  z-index: 0;
+}
+
+.highcontrast-dark .box.box.box pre,
+.editor.highcontrast-dark .top-boxes pre,
+.highcontrast-dark .CodeMirror-gutter-wrapper pre,
+body.project.highcontrast-dark .editor-pane pre,
+body.project.highcontrast-dark .editor pre {
+  color: #b5b4b6;
+}
+
+.highcontrast-dark .CodeMirror-guttermarker-subtle,
+.highcontrast-dark .CodeMirror-linenumber {
+  color: #8a2dc066;
+  text-shadow: 0 0 2px #393a33, 0 0 35px #ffffff44, 0 0 10px #8a2dc066, 0 0 2px #8a2dc066;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Adjusts to any size window <3 */
+
+:root {
+  --c1: hsl(219, 79%, 66%);
+  --c2: hsl(319, 100%, 60%);
+  --c3: hsl(266, 49%, 25%);
+  --c4: hsl(60, 82%, 58%);
+  --c5: hsl(0, 67%, 55%);
+  --c6: hsl(213, 96%, 11%);
+  --c2hsl: 319, 100%, 60%;
+}
+
+@property --outrun {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes outrun {
+  to { --outrun: 1; }
+}
+
+html {
+  height: 100vh;
+}
+html::before {
+  content: "";
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  filter: brightness(1.125);
+  animation: outrun 3s linear infinite;
+  --lgDepth: url("data:image/svg+xml;utf8,<svg width=\"1808\" height=\"230\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M904 -46 L-3616 230 M904 -46 L-3254.4 230 M904 -46 L-2892.8 230 M904 -46 L-2531.2000000000003 230 M904 -46 L-2169.6000000000004 230 M904 -46 L-1808 230 M904 -46 L-1446.4 230 M904 -46 L-1084.8000000000002 230 M904 -46 L-723.2 230 M904 -46 L-361.6 230 M904 -46 L0 230 M904 -46 L361.6 230 M904 -46 L723.2 230 M904 -46 L1084.8000000000002 230 M904 -46 L1446.4 230 M904 -46 L1808 230 M904 -46 L2169.6000000000004 230 M904 -46 L2531.2000000000003 230 M904 -46 L2892.8 230 M904 -46 L3254.4 230 M904 -46 L3616 230 M904 -46 L3977.6000000000004 230 M904 -46 L4339.200000000001 230 M904 -46 L4700.8 230 M904 -46 L5062.400000000001 230 M904 -46 L5424 230\" stroke=\"cornflowerblue\" stroke-width=\"2\" vector-effect=\"non-scaling-stroke\" /></svg>") left bottom / 100% 40% no-repeat;
+  --outrun: 0;
+  --pos: var(--outrun, 0);
+  --distance: 0.5%;
+  --hor: 60%;
+  --l0: var(--hor) + 0 * 0 * var(--distance) + (((0 + 1) * (0 + 1) * var(--distance) - 0 * 0 * var(--distance)) * var(--pos));
+  --l1: var(--hor) + 1 * 1 * var(--distance) + (((1 + 1) * (1 + 1) * var(--distance) - 1 * 1 * var(--distance)) * var(--pos));
+  --l2: var(--hor) + 2 * 2 * var(--distance) + (((2 + 1) * (2 + 1) * var(--distance) - 2 * 2 * var(--distance)) * var(--pos));
+  --l3: var(--hor) + 3 * 3 * var(--distance) + (((3 + 1) * (3 + 1) * var(--distance) - 3 * 3 * var(--distance)) * var(--pos));
+  --l4: var(--hor) + 4 * 4 * var(--distance) + (((4 + 1) * (4 + 1) * var(--distance) - 4 * 4 * var(--distance)) * var(--pos));
+  --l5: var(--hor) + 5 * 5 * var(--distance) + (((5 + 1) * (5 + 1) * var(--distance) - 5 * 5 * var(--distance)) * var(--pos));
+  --l6: var(--hor) + 6 * 6 * var(--distance) + (((6 + 1) * (6 + 1) * var(--distance) - 6 * 6 * var(--distance)) * var(--pos));
+  --l7: var(--hor) + 7 * 7 * var(--distance) + (((7 + 1) * (7 + 1) * var(--distance) - 7 * 7 * var(--distance)) * var(--pos));
+  --l8: var(--hor) + 8 * 8 * var(--distance) + (((8 + 1) * (8 + 1) * var(--distance) - 8 * 8 * var(--distance)) * var(--pos));
+  --l9: var(--hor) + 9 * 9 * var(--distance) + (((9 + 1) * (9 + 1) * var(--distance) - 9 * 9 * var(--distance)) * var(--pos));
+  --lgh: linear-gradient(transparent 0px var(--hor), var(--c1) var(--hor) calc(var(--hor) + 2px), transparent calc(var(--hor) + 2px));
+  --lg0: linear-gradient(transparent 0px calc(var(--l0)), var(--c1) calc(var(--l0)) calc(var(--l0) + 2px), transparent calc(var(--l0) + 2px));
+  --lg1: linear-gradient(transparent 0px calc(var(--l1)), var(--c1) calc(var(--l1)) calc(var(--l1) + 2px), transparent calc(var(--l1) + 2px));
+  --lg2: linear-gradient(transparent 0px calc(var(--l2)), var(--c1) calc(var(--l2)) calc(var(--l2) + 2px), transparent calc(var(--l2) + 2px));
+  --lg3: linear-gradient(transparent 0px calc(var(--l3)), var(--c1) calc(var(--l3)) calc(var(--l3) + 2px), transparent calc(var(--l3) + 2px));
+  --lg4: linear-gradient(transparent 0px calc(var(--l4)), var(--c1) calc(var(--l4)) calc(var(--l4) + 2px), transparent calc(var(--l4) + 2px));
+  --lg5: linear-gradient(transparent 0px calc(var(--l5)), var(--c1) calc(var(--l5)) calc(var(--l5) + 2px), transparent calc(var(--l5) + 2px));
+  --lg6: linear-gradient(transparent 0px calc(var(--l6)), var(--c1) calc(var(--l6)) calc(var(--l6) + 2px), transparent calc(var(--l6) + 2px));
+  --lg7: linear-gradient(transparent 0px calc(var(--l7)), var(--c1) calc(var(--l7)) calc(var(--l7) + 2px), transparent calc(var(--l7) + 2px));
+  --lg8: linear-gradient(transparent 0px calc(var(--l8)), var(--c1) calc(var(--l8)) calc(var(--l8) + 2px), transparent calc(var(--l8) + 2px));
+  --lg9: linear-gradient(transparent 0px calc(var(--l9)), var(--c1) calc(var(--l9)) calc(var(--l9) + 2px), transparent calc(var(--l9) + 2px));
+  background: var(--lgDepth),
+              var(--lgh),
+              var(--lg0),
+              var(--lg1),
+              var(--lg2),
+              var(--lg3),
+              var(--lg4),
+              var(--lg5),
+              var(--lg6),
+              var(--lg7),
+              var(--lg8),
+              var(--lg9),
+              var(--mtn) center 60% / min(75vh, 75vw) no-repeat,
+              var(--mtn2) center 60% / min(75vh, 75vw) repeat-x,
+              linear-gradient(transparent 20%, var(--c5) 60%, var(--c3) 60% 70%, hsla(var(--c2hsl), 0.75), transparent 150%),
+              repeating-linear-gradient(90deg, transparent 0px 2px, var(--c3) 3px 4px),
+              radial-gradient(circle at center, transparent min(45vh, 45vw), hsla(var(--c2hsl), 0.75) min(65vh, 65vw), var(--c3) 120%),
+              linear-gradient(
+                transparent 30vh,
+                  var(--c5) 30vh 30.2vh,
+                     transparent 30.2vh 35.2vh,
+                              var(--c5) 35.2vh 36vh,
+                                   transparent 36vh 40vh,
+                                          var(--c5) 40vh 41.6vh,
+                                             transparent 41.6vh 45.1vh,
+                                                      var(--c5) 45.1vh 48.6vh,
+                                                           transparent 48.6vh 52.5vh,
+                                                                    var(--c5) 52.5vh 57.5vh,
+                                                                         transparent 57.5vh
+              ),
+              radial-gradient(circle at center, var(--c4) min(45vh, 45vw), transparent min(45vh, 45vw)),
+              linear-gradient(var(--c5) 60%, var(--c3) 60%, var(--c2) 150%);
+}
+
