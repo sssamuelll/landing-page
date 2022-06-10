@@ -2,10 +2,11 @@
   resize: both;
   overflow: hidden;
   margin: auto;
-  width: 80vw;
-  height: 80vh;
+  
+  
   min-width: 420px;
   min-height: 255px;
+ 
   position: relative;
   --glow-margin: 70px;
   filter: drop-shadow(0 0 75px rgb(128 0 255 / 0.25));
@@ -24,14 +25,12 @@
 
 .code-container::after {
   content: "";
-  background: linear-gradient(
-    to right,
-    transparent,
-    black 25px, black 110px,
-    transparent 110px 175px,
-    black 175px, black calc(100% - 25px),
-    transparent
-  );
+  background: linear-gradient(to right,
+      transparent,
+      black 25px, black 110px,
+      transparent 110px 175px,
+      black 175px, black calc(100% - 25px),
+      transparent);
   position: absolute;
   top: 125px;
   left: var(--glow-margin);
@@ -57,19 +56,19 @@
   --aug-l1-width: 110px;
   --aug-l1-height: 4px;
   --aug-l-center: 57px;
-  
+
   --aug-rect-r1: initial;
   --aug-r1-width: (100% - 125px - 50px);
   --aug-r1-height: 4px;
   --aug-r-center: 57px;
-  
+
   --aug-clip-tr1: initial;
   --aug-tr1-alt-join-out: initial;
   --aug-tr1: 17px;
   --aug-clip-tr2: initial;
   --aug-tr2: 17px;
   --aug-tr-extend1: 50px;
-  
+
   --aug-round-tl1: initial;
   --aug-tl1: 8px;
   --aug-round-br1: initial;
@@ -91,10 +90,10 @@ section.augs {
   margin: auto;
   --aug-inlay: initial;
   --aug-inlay-all: 2px;
-  --aug-inlay-bg: url(http://augmented-ui.com/img/propjockey.png)
-    center 70% / auto 70% no-repeat;
+  
   --aug-inlay-opacity: 0.25;
 }
+
 section.augs::before {
   filter: brightness(0.2) blur(10px);
 }
@@ -112,8 +111,8 @@ section.augs::before {
   --min: radial-gradient(circle, var(--yellow), var(--yellow) 7px, transparent 8px);
   --max: radial-gradient(circle, var(--green), var(--green) 7px, transparent 8px);
   background: var(--close) -28px no-repeat,
-              var(--min) -2px no-repeat,
-              var(--max) 24px no-repeat;
+    var(--min) -2px no-repeat,
+    var(--max) 24px no-repeat;
   filter: brightness(0.5);
   opacity: 0.75;
   cursor: pointer;
@@ -140,8 +139,35 @@ input {
   color: white;
   filter: brightness(1.2);
 }
+
+@media only screen and (min-device-width:320px)  {
+  
+  .code-container {
+    max-height: 1000px ;
+    height:1000px ;
+    width: 970px ;
+  }
+
+  .code * {
+    font-size: 30px ;
+  }
+  
+
+}
+
+@media only screen and (min-device-width:801px) {
+  .code-container {
+    width: 900px;
+    height: 80vh;
+    max-height: 700px;
+   
+  }
+  .code * {
+    font-size: 18px ;
+  }  
+
+}
 .code * {
-  font-size: 18px;
   font-weight: normal;
   color: #b5b4b6;
   font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
@@ -153,12 +179,9 @@ body {
   width: 100vw;
   --c: rgb(0 0 0 / 0.95);
   --bgb: linear-gradient(var(--c), var(--c));
-  --bg: repeating-conic-gradient(
-    from 7.5deg at center center,
-    hsl(200, 100%, 0%) 0deg 15deg,
-    hsl(200, 100%, 60%) 10deg 30deg
-  );
-  background: var(--bgb), var(--bg), black;
+  --bg: repeating-conic-gradient(from 7.5deg at center center,
+      hsl(200, 100%, 0%) 0deg 15deg,
+      hsl(200, 100%, 60%) 10deg 30deg);
 }
 
 * {
@@ -170,22 +193,21 @@ body {
 
 /* https://marketplace.visualstudio.com/items?itemName=webrender.synthwave-x-fluoromachine */
 .bg {
-  background: repeating-linear-gradient(
-    to top,
-    rgba(255, 255, 255, 0.03) 0px 2px,
-    transparent 2px 4px
-  ),
-  linear-gradient(to bottom, #200933 75%, #3d0b43);
+  background: repeating-linear-gradient(to top,
+      rgba(255, 255, 255, 0.03) 0px 2px,
+      transparent 2px 4px),
+    linear-gradient(to bottom, #200933 75%, #3d0b43);
 }
-.bg::after{
-  content:'';
-  height:50%;
-  width:100%;
-  display:block;
-  background-image:linear-gradient(90deg, rgba(252,25,154,.1) 1px, rgba(0,0,0,0) 1px), linear-gradient(0deg, rgba(252,25,154,.1) 1px, rgba(0,0,0,0) 1px);
-  background-position:bottom;
-  background-repeat:repeat;
-  background-size:20px 20px;
+
+.bg::after {
+  content: '';
+  height: 50%;
+  width: 100%;
+  display: block;
+  background-image: linear-gradient(90deg, rgba(252, 25, 154, .1) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(0deg, rgba(252, 25, 154, .1) 1px, rgba(0, 0, 0, 0) 1px);
+  background-position: bottom;
+  background-repeat: repeat;
+  background-size: 20px 20px;
   left: -25px;
   position: absolute;
   pointer-events: none;
@@ -199,21 +221,243 @@ body {
   border: none;
   margin-right: 15px;
 }
+
 .CodeMirror {
   height: 100%;
   background: transparent;
 }
+
 .CodeMirror-linenumber {
   padding-right: 1em;
 }
+
 .CodeMirror-overlayscroll-horizontal div,
 .CodeMirror-overlayscroll-vertical div {
   background: rgba(153, 99, 255, 0.5);
 }
-.CodeMirror-scrollbar-filler { display: none!important; }
+
+.CodeMirror-scrollbar-filler {
+  display: none !important;
+}
 
 /* codepen's highcontrast-dark theme */
-.cm-header{font-weight:700}.cm-strong{font-weight:700}.cm-em{font-style:italic}:root{--editor-top-bar-background: black;--tab-bg: #131417;--tab-border-color: #2a2c33;--resizer-background: var(--editor-top-bar-background);--resizer-border: #242424}.sidebar-false .main-header,.sidebar-false .main-header .header-wrap,.editor-footer{background:var(--editor-top-bar-background)}.CodeMirror-cursor{border-left-color:#fff!important}.CodeMirror-selected{background:rgba(255,255,255,.05)}.CodeMirror-focused .CodeMirror-selected{background:rgba(255,255,255,.1)}.CodeMirror-matchingbracket{border-bottom:1px solid rgba(255,255,255,.5)}.CodeMirror-matchingtag{border-bottom:1px solid rgba(255,255,255,.3)}.cm-searching{background:#000;outline:2px solid rgba(255,255,255,.25)}.CodeMirror-hints,.emmet-abbreviation-preview{border:1px solid #5a5f73;background:#1e1f26}.CodeMirror-hint{color:#fff}li.CodeMirror-hint-active{background:#c7c9d3;color:#000}.project-editor-warning{background:rgba(255,255,255,.1)}.editor-footer{border-top-color:var(--resizer-border,var(--cp-color-6))}.cm-keyword{color:#ffdd40}.cm-atom{color:#a3d65a}.box-html .cm-atom{color:#ff3c41}.cm-def{color:#0ebeff}.cm-variable{color:#c7c9d3}.cm-variable-2{color:#47cf73}.cm-variable-3{color:#fff}.cm-header{color:#ff3c41}.cm-number{color:#2bc7b9}.cm-property{color:#5e91f2}.cm-attribute{color:#e3e4e8}.cm-builtin{color:#ae63e4}.cm-qualifier{color:#ffdd40}.cm-operator{color:#47cf73}.cm-meta{color:#0ebeff}.cm-string{color:#2bc7b9}.cm-string-2{color:#d75093}.cm-tag{color:#ffdd40}.box-css .cm-tag{color:#ff8d41}.cm-tag.cm-bracket{color:#9b9dad}.cm-comment{color:#88afbf}body.editor{background:#131417}.box.box.box,.editor .top-boxes,.CodeMirror-gutter-wrapper,body.project .editor-pane,body.project .editor{background:#131417}.box.box.box pre,.editor .top-boxes pre,.CodeMirror-gutter-wrapper pre,body.project .editor-pane pre,body.project .editor pre{color:#d5d7de}.CodeMirror-guttermarker-subtle,.CodeMirror-linenumber{color:rgba(113,119,144,.6)}#output pre::-webkit-scrollbar,#output iframe::-webkit-scrollbar{width:.5em;height:.5em}#output pre::-webkit-scrollbar-thumb,#output iframe::-webkit-scrollbar-thumb{background:#373c49}#output pre::-webkit-scrollbar-track,#output iframe::-webkit-scrollbar-track{background:0 0}.CodeMirror-simplescroll-horizontal div,.CodeMirror-simplescroll-vertical div{background:#373c49}.powers .mini-button{background:#444857}.powers .mini-button:hover,.powers .mini-button:focus{background:#c7c9d3}.powers .mini-button:hover svg,.powers .mini-button:focus svg{fill:#000}
+.cm-header {
+  font-weight: 700
+}
+
+.cm-strong {
+  font-weight: 700
+}
+
+.cm-em {
+  font-style: italic
+}
+
+:root {
+  --editor-top-bar-background: black;
+  --tab-bg: #131417;
+  --tab-border-color: #2a2c33;
+  --resizer-background: var(--editor-top-bar-background);
+  --resizer-border: #242424
+}
+
+.sidebar-false .main-header,
+.sidebar-false .main-header .header-wrap,
+.editor-footer {
+  background: var(--editor-top-bar-background)
+}
+
+.CodeMirror-cursor {
+  border-left-color: #fff !important
+}
+
+.CodeMirror-selected {
+  background: rgba(255, 255, 255, .05)
+}
+
+.CodeMirror-focused .CodeMirror-selected {
+  background: rgba(255, 255, 255, .1)
+}
+
+.CodeMirror-matchingbracket {
+  border-bottom: 1px solid rgba(255, 255, 255, .5)
+}
+
+.CodeMirror-matchingtag {
+  border-bottom: 1px solid rgba(255, 255, 255, .3)
+}
+
+.cm-searching {
+  background: #000;
+  outline: 2px solid rgba(255, 255, 255, .25)
+}
+
+.CodeMirror-hints,
+.emmet-abbreviation-preview {
+  border: 1px solid #5a5f73;
+  background: #1e1f26
+}
+
+.CodeMirror-hint {
+  color: #fff
+}
+
+li.CodeMirror-hint-active {
+  background: #c7c9d3;
+  color: #000
+}
+
+.project-editor-warning {
+  background: rgba(255, 255, 255, .1)
+}
+
+.editor-footer {
+  border-top-color: var(--resizer-border, var(--cp-color-6))
+}
+
+.cm-keyword {
+  color: #ffdd40
+}
+
+.cm-atom {
+  color: #a3d65a
+}
+
+.box-html .cm-atom {
+  color: #ff3c41
+}
+
+.cm-def {
+  color: #0ebeff
+}
+
+.cm-variable {
+  color: #c7c9d3
+}
+
+.cm-variable-2 {
+  color: #47cf73
+}
+
+.cm-variable-3 {
+  color: #fff
+}
+
+.cm-header {
+  color: #ff3c41
+}
+
+.cm-number {
+  color: #2bc7b9
+}
+
+.cm-property {
+  color: #5e91f2
+}
+
+.cm-attribute {
+  color: #e3e4e8
+}
+
+.cm-builtin {
+  color: #ae63e4
+}
+
+.cm-qualifier {
+  color: #ffdd40
+}
+
+.cm-operator {
+  color: #47cf73
+}
+
+.cm-meta {
+  color: #0ebeff
+}
+
+.cm-string {
+  color: #2bc7b9
+}
+
+.cm-string-2 {
+  color: #d75093
+}
+
+.cm-tag {
+  color: #ffdd40
+}
+
+.box-css .cm-tag {
+  color: #ff8d41
+}
+
+.cm-tag.cm-bracket {
+  color: #9b9dad
+}
+
+.cm-comment {
+  color: #88afbf
+}
+
+body.editor {
+  background: #131417
+}
+
+.box.box.box,
+.editor .top-boxes,
+.CodeMirror-gutter-wrapper,
+body.project .editor-pane,
+body.project .editor {
+  background: #131417
+}
+
+.box.box.box pre,
+.editor .top-boxes pre,
+.CodeMirror-gutter-wrapper pre,
+body.project .editor-pane pre,
+body.project .editor pre {
+  color: #d5d7de
+}
+
+.CodeMirror-guttermarker-subtle,
+.CodeMirror-linenumber {
+  color: rgba(113, 119, 144, .6)
+}
+
+#output pre::-webkit-scrollbar,
+#output iframe::-webkit-scrollbar {
+  width: .5em;
+  height: .5em
+}
+
+#output pre::-webkit-scrollbar-thumb,
+#output iframe::-webkit-scrollbar-thumb {
+  background: #373c49
+}
+
+#output pre::-webkit-scrollbar-track,
+#output iframe::-webkit-scrollbar-track {
+  background: 0 0
+}
+
+.CodeMirror-simplescroll-horizontal div,
+.CodeMirror-simplescroll-vertical div {
+  background: #373c49
+}
+
+.powers .mini-button {
+  background: #444857
+}
+
+.powers .mini-button:hover,
+.powers .mini-button:focus {
+  background: #c7c9d3
+}
+
+.powers .mini-button:hover svg,
+.powers .mini-button:focus svg {
+  fill: #000
+}
 
 /* theme overrides original source */
 /* https://marketplace.visualstudio.com/items?itemName=webrender.synthwave-x-fluoromachine */
@@ -236,28 +480,28 @@ body {
 }
 
 .highcontrast-dark .CodeMirror-selected {
-  background: rgba(255,255,255,0.05)
+  background: rgba(255, 255, 255, 0.05)
 }
 
 .highcontrast-dark .CodeMirror-focused .CodeMirror-selected {
-  background: rgba(255,255,255,0.1)
+  background: rgba(255, 255, 255, 0.1)
 }
 
 .highcontrast-dark .CodeMirror-matchingbracket {
-  border-bottom: 1px solid rgba(255,255,255,0.5)
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5)
 }
 
 .highcontrast-dark .CodeMirror-matchingtag {
-  border-bottom: 1px solid rgba(255,255,255,0.3)
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3)
 }
 
 .highcontrast-dark .powers {
-  border-bottom: 1px solid rgba(255,255,255,0.05)
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05)
 }
 
 .highcontrast-dark .cm-searching {
   background: black;
-  outline: 2px solid rgba(255,255,255,0.25)
+  outline: 2px solid rgba(255, 255, 255, 0.25)
 }
 
 .highcontrast-dark .CodeMirror-hints,
@@ -276,7 +520,7 @@ body {
 }
 
 .highcontrast-dark .project-editor-warning {
-  background: rgba(255,255,255,0.1)
+  background: rgba(255, 255, 255, 0.1)
 }
 
 .highcontrast-dark .cm-atom {
@@ -290,7 +534,7 @@ body {
 .highcontrast-dark .cm-def,
 .highcontrast-dark .cm-variable-2,
 .highcontrast-dark .cm-variable,
-.highcontrast-dark .box-js .cm-variable + .cm-property {
+.highcontrast-dark .box-js .cm-variable+.cm-property {
   color: #61e2ff;
   text-shadow: 0 0 2px #001716, 0 0 5px #03edf933, 0 0 10px #ffff6633;
 }
@@ -298,6 +542,7 @@ body {
 .highcontrast-dark .cm-header {
   color: #ff3c41
 }
+
 .highcontrast-dark .cm-builtin {
   color: #ae63e4
 }
@@ -312,11 +557,12 @@ body {
 .highcontrast-dark .cm-attribute,
 .highcontrast-dark .cm-property,
 .highcontrast-dark .cm-keyword,
-.highcontrast-dark .presentation > .cm-def,
+.highcontrast-dark .presentation>.cm-def,
 .highcontrast-dark .cm-qualifier {
   color: #fc199a;
   text-shadow: 0 0 2px #393a33, 0 0 35px #ffffff44, 0 0 10px #fc199a, 0 0 2px #fc199a;
 }
+
 .highcontrast-dark .cm-operator,
 .highcontrast-dark .cm-variable-3,
 .highcontrast-dark .cm-attribute,
@@ -325,7 +571,7 @@ body {
 }
 
 .highcontrast-dark .cm-meta,
-.highcontrast-dark .cm-meta + .cm-property,
+.highcontrast-dark .cm-meta+.cm-property,
 .highcontrast-dark .cm-string,
 .highcontrast-dark .cm-string-2 {
   color: #9963ff;
@@ -336,7 +582,7 @@ body {
 .highcontrast-dark .cm-callee,
 .highcontrast-dark .box-css .cm-tag,
 .highcontrast-dark .cm-tag.cm-bracket,
-.highcontrast-dark .box-js .cm-property  {
+.highcontrast-dark .box-js .cm-property {
   color: #ffcc00;
   text-shadow: 0 0 2px #100c0f, 0 0 3px #ffaa0099, 0 0 5px #ffaa0099, 0 0 10px #ffaa0099;
   font-style: italic;
@@ -359,24 +605,24 @@ body.project.highcontrast-dark .editor-pane,
 body.project.highcontrast-dark .editor {
   background: none;
 }
+
 .editor.highcontrast-dark .top-boxes {
   --swxfm__c: rgba(153, 99, 255);
-  background: repeating-linear-gradient(
-    to top,
-    rgba(255, 255, 255, 0.03) 0px 2px,
-    transparent 2px 4px
-  ),
-  linear-gradient(to bottom, #200933 75%, #3d0b43);
+  background: repeating-linear-gradient(to top,
+      rgba(255, 255, 255, 0.03) 0px 2px,
+      transparent 2px 4px),
+    linear-gradient(to bottom, #200933 75%, #3d0b43);
 }
-.editor.highcontrast-dark .top-boxes:after{
-  content:'';
-  height:300px;
-  width:100%;
-  display:block;
-  background-image:linear-gradient(90deg, rgba(252,25,154,.1) 1px, rgba(0,0,0,0) 1px), linear-gradient(0deg, rgba(252,25,154,.1) 1px, rgba(0,0,0,0) 1px);
-  background-position:bottom;
-  background-repeat:repeat;
-  background-size:20px 20px;
+
+.editor.highcontrast-dark .top-boxes:after {
+  content: '';
+  height: 300px;
+  width: 100%;
+  display: block;
+  background-image: linear-gradient(90deg, rgba(252, 25, 154, .1) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(0deg, rgba(252, 25, 154, .1) 1px, rgba(0, 0, 0, 0) 1px);
+  background-position: bottom;
+  background-repeat: repeat;
+  background-size: 20px 20px;
   left: -25px;
   position: absolute;
   pointer-events: none;
@@ -399,24 +645,6 @@ body.project.highcontrast-dark .editor pre {
   text-shadow: 0 0 2px #393a33, 0 0 35px #ffffff44, 0 0 10px #8a2dc066, 0 0 2px #8a2dc066;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Adjusts to any size window <3 */
 
 :root {
@@ -436,12 +664,15 @@ body.project.highcontrast-dark .editor pre {
 }
 
 @keyframes outrun {
-  to { --outrun: 1; }
+  to {
+    --outrun: 1;
+  }
 }
 
 html {
   height: 100vh;
 }
+
 html::before {
   content: "";
   position: fixed;
@@ -480,36 +711,33 @@ html::before {
   --lg8: linear-gradient(transparent 0px calc(var(--l8)), var(--c1) calc(var(--l8)) calc(var(--l8) + 2px), transparent calc(var(--l8) + 2px));
   --lg9: linear-gradient(transparent 0px calc(var(--l9)), var(--c1) calc(var(--l9)) calc(var(--l9) + 2px), transparent calc(var(--l9) + 2px));
   background: var(--lgDepth),
-              var(--lgh),
-              var(--lg0),
-              var(--lg1),
-              var(--lg2),
-              var(--lg3),
-              var(--lg4),
-              var(--lg5),
-              var(--lg6),
-              var(--lg7),
-              var(--lg8),
-              var(--lg9),
-              var(--mtn) center 60% / min(75vh, 75vw) no-repeat,
-              var(--mtn2) center 60% / min(75vh, 75vw) repeat-x,
-              linear-gradient(transparent 20%, var(--c5) 60%, var(--c3) 60% 70%, hsla(var(--c2hsl), 0.75), transparent 150%),
-              repeating-linear-gradient(90deg, transparent 0px 2px, var(--c3) 3px 4px),
-              radial-gradient(circle at center, transparent min(45vh, 45vw), hsla(var(--c2hsl), 0.75) min(65vh, 65vw), var(--c3) 120%),
-              linear-gradient(
-                transparent 30vh,
-                  var(--c5) 30vh 30.2vh,
-                     transparent 30.2vh 35.2vh,
-                              var(--c5) 35.2vh 36vh,
-                                   transparent 36vh 40vh,
-                                          var(--c5) 40vh 41.6vh,
-                                             transparent 41.6vh 45.1vh,
-                                                      var(--c5) 45.1vh 48.6vh,
-                                                           transparent 48.6vh 52.5vh,
-                                                                    var(--c5) 52.5vh 57.5vh,
-                                                                         transparent 57.5vh
-              ),
-              radial-gradient(circle at center, var(--c4) min(45vh, 45vw), transparent min(45vh, 45vw)),
-              linear-gradient(var(--c5) 60%, var(--c3) 60%, var(--c2) 150%);
+    var(--lgh),
+    var(--lg0),
+    var(--lg1),
+    var(--lg2),
+    var(--lg3),
+    var(--lg4),
+    var(--lg5),
+    var(--lg6),
+    var(--lg7),
+    var(--lg8),
+    var(--lg9),
+    var(--mtn) center 60% / min(75vh, 75vw) no-repeat,
+    var(--mtn2) center 60% / min(75vh, 75vw) repeat-x,
+    linear-gradient(transparent 20%, var(--c5) 60%, var(--c3) 60% 70%, hsla(var(--c2hsl), 0.75), transparent 150%),
+    repeating-linear-gradient(90deg, transparent 0px 2px, var(--c3) 3px 4px),
+    radial-gradient(circle at center, transparent min(45vh, 45vw), hsla(var(--c2hsl), 0.75) min(65vh, 65vw), var(--c3) 120%),
+    linear-gradient(transparent 30vh,
+      var(--c5) 30vh 30.2vh,
+      transparent 30.2vh 35.2vh,
+      var(--c5) 35.2vh 36vh,
+      transparent 36vh 40vh,
+      var(--c5) 40vh 41.6vh,
+      transparent 41.6vh 45.1vh,
+      var(--c5) 45.1vh 48.6vh,
+      transparent 48.6vh 52.5vh,
+      var(--c5) 52.5vh 57.5vh,
+      transparent 57.5vh),
+    radial-gradient(circle at center, var(--c4) min(45vh, 45vw), transparent min(45vh, 45vw)),
+    linear-gradient(var(--c5) 60%, var(--c3) 60%, var(--c2) 150%);
 }
-
