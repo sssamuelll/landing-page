@@ -201,18 +201,18 @@ body {
 
 .bg::after {
   content: '';
-  height: 50%;
+  height: 42%;
   width: 100%;
   display: block;
-  background-image: linear-gradient(90deg, rgba(252, 25, 154, .1) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(0deg, rgba(252, 25, 154, .1) 1px, rgba(0, 0, 0, 0) 1px);
+  /*background-image: linear-gradient(90deg, rgba(252, 25, 154, .1) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(0deg, rgba(252, 25, 154, .1) 1px, rgba(0, 0, 0, 0) 1px);*/
   background-position: bottom;
   background-repeat: repeat;
-  background-size: 20px 20px;
-  left: -25px;
+  background-size: 90px 30px;
+  
   position: absolute;
   pointer-events: none;
   bottom: 0;
-  transform: perspective(100px) rotateX(60deg);
+  transform: perspective(55px) rotateX(30deg);
   z-index: 0;
 }
 
