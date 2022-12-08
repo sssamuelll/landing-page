@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Rotary Torbes</title>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="../../../rotary/assets/images/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="../../../rotary/assets/images/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../../../rotary/assets/images/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../../../rotary/assets/images/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114"
+		href="../../../rotary/assets/images/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120"
+		href="../../../rotary/assets/images/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144"
+		href="../../../rotary/assets/images/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152"
+		href="../../../rotary/assets/images/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180"
+		href="../../../rotary/assets/images/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="../../../rotary/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../../../rotary/assets/images/favicons/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="../../../rotary/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="../../../rotary/assets/images/favicons/android-chrome-192x192.png"
+		sizes="192x192" class="__web-inspector-hide-shortcut__">
+	<link rel="icon" type="image/png" href="../../../rotary/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="../../../rotary/members-center/admin/dashboard/style.css">
+	<link rel="stylesheet" href="../../../rotary/members-center/admin/dashboard/media.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+		integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
+
+</head>
+
+<body>
+	<!-- partial:index.partial.html -->
+	<div class="window">
+		<header class="window-header">
+			<nav class="navigation">
+				<div class="navigation-top">
+					<a href="" class="navigation-item active">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M3 9.5L12 4L21 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+							<path d="M19 13V19.4C19 19.7314 18.7314 20 18.4 20H5.6C5.26863 20 5 19.7314 5 19.4V13"
+								stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+						<span class="navigation-item-title">Dashboard</span>
+					</a>
+					<a href="../../../rotary/members-center/admin/pages" class="navigation-item">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M3.6 3H20.4C20.7314 3 21 3.26863 21 3.6V20.4C21 20.7314 20.7314 21 20.4 21H3.6C3.26863 21 3 20.7314 3 20.4V3.6C3 3.26863 3.26863 3 3.6 3Z"
+								stroke="currentColor" stroke-width="1.5" />
+							<path d="M9.75 9.75V21" stroke="currentColor" stroke-width="1.5" />
+							<path d="M3 9.75H21" stroke="currentColor" stroke-width="1.5" />
+						</svg>
+						<span class="navigation-item-title">Paginas</span>
+					</a>
+					<a href="../../../rotary/members-center/admin/media" class="navigation-item">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M2.6954 7.18536L11.6954 11.1854L12.3046 9.81464L3.3046 5.81464L2.6954 7.18536ZM12.75 21.5V10.5H11.25V21.5H12.75ZM12.3046 11.1854L21.3046 7.18536L20.6954 5.81464L11.6954 9.81464L12.3046 11.1854Z"
+								fill="currentColor" />
+							<path
+								d="M3 17.1101V6.88992C3 6.65281 3.13964 6.43794 3.35632 6.34164L11.7563 2.6083C11.9115 2.53935 12.0885 2.53935 12.2437 2.6083L20.6437 6.34164C20.8604 6.43794 21 6.65281 21 6.88992V17.1101C21 17.3472 20.8604 17.5621 20.6437 17.6584L12.2437 21.3917C12.0885 21.4606 11.9115 21.4606 11.7563 21.3917L3.35632 17.6584C3.13964 17.5621 3 17.3472 3 17.1101Z"
+								stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+							<path d="M7.5 4.5L16.1437 8.34164C16.3604 8.43794 16.5 8.65281 16.5 8.88992V12.5"
+								stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+						<span class="navigation-item-title">Banco de Imagenes y Videos</span>
+
+					</a>
+					<a href="../../../rotary/members-center/admin/press-center" class="navigation-item">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
+								stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+							<path d="M8 21.1679V14L12 7L16 14V21.1679" stroke="currentColor" stroke-width="1.5"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path
+								d="M8 14C8 14 9.12676 15 10 15C10.8732 15 12 14 12 14C12 14 13.1268 15 14 15C14.8732 15 16 14 16 14"
+								stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+						<span class="navigation-item-title">Centro de prensa</span>
+
+					</a>
+					<a href="" class="navigation-item navigation-item--notification">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M18 8.4C18 6.70261 17.3679 5.07475 16.2426 3.87452C15.1174 2.67428 13.5913 2 12 2C10.4087 2 8.88258 2.67428 7.75736 3.87452C6.63214 5.07475 6 6.70261 6 8.4C6 15.8667 3 18 3 18H21C21 18 18 15.8667 18 8.4Z"
+								stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+							<path
+								d="M13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21"
+								stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+						<span class="navigation-item-title">Reúniones semanales</span>
+
+					</a>
+				</div>
+				<div class="navigation-bottom">
+					<a href="#" class="navigation-item">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+								stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+							<path
+								d="M19.6224 10.3954L18.5247 7.7448L20 6L18 4L16.2647 5.48295L13.5578 4.36974L12.9353 2H10.981L10.3491 4.40113L7.70441 5.51596L6 4L4 6L5.45337 7.78885L4.3725 10.4463L2 11V13L4.40111 13.6555L5.51575 16.2997L4 18L6 20L7.79116 18.5403L10.397 19.6123L11 22H13L13.6045 19.6132L16.2551 18.5155C16.6969 18.8313 18 20 18 20L20 18L18.5159 16.2494L19.6139 13.598L21.9999 12.9772L22 11L19.6224 10.3954Z"
+								stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+
+						<span class="navigation-item-title">Ajustes</span>
+					</a>
+					<a href="#" class="navigation-item">
+						<svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="80" height="80"
+							colors="#b2cba3,#e0df9f,#e7a83e,#9a736e,#ea525f" name="Babe Didrikson" size="80"
+							class="avatar">
+							<mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36">
+								<rect width="36" height="36" rx="20" fill="white"></rect>
+							</mask>
+							<g mask="url(#mask__beam)" fill="transparent">
+								<rect width="36" height="36" rx="20" fill="#e7a83e"></rect>
+								<rect x="0" y="0" width="36" height="36"
+									transform="translate(-5 9) rotate(249 18 18) scale(1)" fill="#ea525f" rx="36">
+								</rect>
+								<g transform="translate(-1 4.5) rotate(9 18 18)">
+									<path d="M13,19 a1,0.75 0 0,0 10,0" fill="black"></path>
+									<rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="black">
+									</rect>
+									<rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="black">
+									</rect>
+								</g>
+							</g>
+						</svg>
+						<span class="navigation-item-title">Tu Perfil</span>
+					</a>
+				</div>
+			</nav>
+		</header>
+		<main class="window-main">
+			<div class="wrapper">
+				<div class="header">
+					<div class="search-bar">
+						<input type="text" placeholder="Buscar">
+					</div>
+					<div class="user-settings">
+						<img class="user-img"
+							src="../../../../../rotary/members-center/admin/dashboard/assets/users/profile-pic.jpg"
+							alt="">
+						<div class="toggle-menu">
+							<div class="user-name">Hola Samuel!</div>
+							<svg viewBox="0 0 492 492" fill="currentColor">
+								<path
+									d="M484.13 124.99l-16.11-16.23a26.72 26.72 0 00-19.04-7.86c-7.2 0-13.96 2.79-19.03 7.86L246.1 292.6 62.06 108.55c-5.07-5.06-11.82-7.85-19.03-7.85s-13.97 2.79-19.04 7.85L7.87 124.68a26.94 26.94 0 000 38.06l219.14 219.93c5.06 5.06 11.81 8.63 19.08 8.63h.09c7.2 0 13.96-3.57 19.02-8.63l218.93-219.33A27.18 27.18 0 00492 144.1c0-7.2-2.8-14.06-7.87-19.12z">
+								</path>
+							</svg>
+						</div>
+						<div class="notify">
+							<div class="notification"></div>
+							<svg viewBox="0 0 24 24" fill="currentColor">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M18.707 8.796c0 1.256.332 1.997 1.063 2.85.553.628.73 1.435.73 2.31 0 .874-.287 1.704-.863 2.378a4.537 4.537 0 01-2.9 1.413c-1.571.134-3.143.247-4.736.247-1.595 0-3.166-.068-4.737-.247a4.532 4.532 0 01-2.9-1.413 3.616 3.616 0 01-.864-2.378c0-.875.178-1.682.73-2.31.754-.854 1.064-1.594 1.064-2.85V8.37c0-1.682.42-2.781 1.283-3.858C7.861 2.942 9.919 2 11.956 2h.09c2.08 0 4.204.987 5.466 2.625.82 1.054 1.195 2.108 1.195 3.745v.426zM9.074 20.061c0-.504.462-.734.89-.833.5-.106 3.545-.106 4.045 0 .428.099.89.33.89.833-.025.48-.306.904-.695 1.174a3.635 3.635 0 01-1.713.731 3.795 3.795 0 01-1.008 0 3.618 3.618 0 01-1.714-.732c-.39-.269-.67-.694-.695-1.173z">
+								</path>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="dashboard-container">
+					<div class="main-container">
+						<div class="main-header anim" style="--delay: 0s">Próximos eventos</div>
+
+						<div class="blog-card anim" style="--delay: .2s">
+							<div class="meta">
+								<div class="photo"
+									style="background-image: url(http://samueldar.io/rotary/members-center/admin/dashboard/assets/gran-caminata.jpg)">
+								</div>
+								<ul class="details">
+									<!--<li class="author"><a href="#"></a></li>-->
+									<li class="date">Octubre 23, 2022</li>
+									<li class="tags">
+										<ul>
+											<li><a href="#">rotary</a></li>
+											<li><a href="#">endpolionow</a></li>
+
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="description">
+								<h1>Gran Caminata</h1>
+								<h2>en el Dia Mundial de la Lucha Contra La Polio</h2>
+								<p> Rotary Torbes invita a toda la comunidad a la Gran Caminata en el Dia Mundial de la
+									Lucha Contra La Polio, El Domingo 23 de Octubre, salida 10:00 AM.
+									Inscripciòn/Colaboraciòn de 1 $ . Asisteb en familia y todos lucharemos contra esta
+									enfermedad.</p>
+								<p class="read-more">
+									<a href="#">Leer mas</a>
+								</p>
+							</div>
+						</div>
+
+						<div class="blog-card alt anim" style="--delay: .3s">
+							<div class="meta">
+								<div class="photo"
+									style="background-image: url(http://samueldar.io/rotary/members-center/admin/dashboard/assets/jornada-de-vacunacion.jpg)">
+								</div>
+								<ul class="details">
+									<!--<li class="author"><a href="#">Jane Doe</a></li>-->
+									<li class="date">Octubre 24, 2022</li>
+									<li class="tags">
+										<ul>
+											<li><a href="#">endpolionow</a></li>
+											<li><a href="#">rotary</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="description">
+								<h1>Jornada de Vacunación Gratuita</h1>
+								<h2>en Locatel las Lomas y Locatel Av 19 de abril</h2>
+								<p>Rotary Torbes invita a toda la comunidad en el marco del Dia Mundial en la lucha
+									contra
+									la Polio, a Jornada de Vacunacion en @locatel las lomas y @locatel frente a
+									Policlinica
+									Tachira. Asiste, lleva a tus hijos, ayudanos a ayudar en brindar salud...
+								</p>
+								<p class="read-more">
+									<a href="#">Leér mas</a>
+								</p>
+							</div>
+						</div>
+
+						<!--
+						<div class="main-blogs">
+	
+							<div class="main-blog anim" style="--delay: .1s" >
+								<div class="main-blog__img-source" data-src="url(http://samueldar.io/rotary/members-center/admin/dashboard/assets/gran-caminata.jpg)" hidden></div>
+								<div class="main-blog__title">DANCEND POLIO NOW este 22 de Octubre</div>
+								<div class="main-blog__author">
+									<div class="author-img__wrapper">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+											stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+											<path d="M20 6L9 17l-5-5"></path>
+										</svg>
+										<img class="author-img"
+											src="http://samueldar.io/rotary/members-center/admin/dashboard/assets/logos/rotaract.png">
+									</div>
+									<div class="author-detail">
+										<div class="author-name">Rotaract Torbes</div>
+										<div class="author-info">53 vistas </div>
+									</div>
+								</div>
+								<div class="main-blog__time">7 min</div>
+	
+							</div>-->
+
+						<!--<div class="main-blog anim" style="--delay: .2s">
+	
+								<div class="main-blog__img-source" data-src="url(http://samueldar.io/rotary/members-center/admin/dashboard/assets/navidad-contigo.jpg)" hidden></div>
+								<div class="main-blog__title">Navidad Contigo</div>
+								<div class="main-blog__author tips">
+									<div class="main-blog__time">7 min</div>
+									<div class="author-img__wrapper">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+											stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+											<path d="M20 6L9 17l-5-5"></path>
+										</svg>
+										<img class="author-img"
+											src="../../../rotary/assets/images/favicons/favicon-194x194.png">
+									</div>
+									<div class="author-detail">
+										<div class="author-name">Rotary Torbes</div>
+										<div class="author-info">53 vistas<span></span></div>
+									</div>
+								</div>
+	
+							</div>
+	
+						</div>
+					-->
+
+						<div class="small-header anim" style="--delay: .3s">Galería de los ultimos eventos</div>
+						<div class="videos">
+							<div class="video anim" style="--delay: .4s">
+								<a
+									href="../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023">
+									<div class="video-time">11 fotos</div>
+									<div class="video-wrapper">
+										<img class="portrait-first-img" id="firstImage"
+											src="http://samueldar.io/rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_183718.jpeg">
+										<!--<video muted="">
+										<source
+											src="https://player.vimeo.com/external/436572488.sd.mp4?s=eae5fb490e214deb9ff532dd98d101efe94e7a8b&amp;profile_id=139&amp;oauth2_token_id=57447761"
+											type="video/mp4">
+									</video>-->
+										<div class="author-img__wrapper video-author">
+											<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+												stroke-linecap="round" stroke-linejoin="round"
+												class="feather feather-check">
+												<path d="M20 6L9 17l-5-5"></path>
+											</svg>
+											<img class="author-img"
+												src="../../../../../rotary/assets/images/favicons/favicon-194x194.png?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500">
+										</div>
+									</div>
+									<div class="video-by">Rotary Torbes</div>
+									<div class="video-name">1era reunión ordinaria 2022-2023</div>
+									<div class="video-view">54 vistas<span class="seperate video-seperate"></span>Hace 1
+										semana</div>
+								</a>
+							</div>
+							<div class="video anim" style="--delay: .5s">
+								<a
+									href="../../../../rotary/members-center/admin/media/rotary/conversatorio-advocaciones-virgen-maria">
+									<div class="video-time">9 fotos</div>
+									<div class="video-wrapper">
+										<img class="portrait-img"
+											src="http://samueldar.io/rotary/members-center/admin/media/rotary/conversatorio-advocaciones-virgen-maria/assets/122513.jpg">
+										<!--<video muted="">
+											<source
+												src="https://player.vimeo.com/external/449972745.sd.mp4?s=9943177fe8a6147b7bc4598259401f06ec57878a&amp;profile_id=139&amp;oauth2_token_id=57447761"
+												type="video/mp4">
+										</video>-->
+										<div class="author-img__wrapper video-author">
+											<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+												stroke-linecap="round" stroke-linejoin="round"
+												class="feather feather-check">
+												<path d="M20 6L9 17l-5-5"></path>
+											</svg>
+											<img class="author-img"
+												src="../../../../../rotary/assets/images/favicons/favicon-194x194.png?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500">
+										</div>
+									</div>
+									<div class="video-by offline">Rotary Torbes</div>
+									<div class="video-name">Conversatorio con Desiree Gonzalez advocaciones de la virgen
+										en
+										Venezuela</div>
+									<div class="video-view">42 vistas<span class="seperate video-seperate"></span>Hace 1
+										semana</div>
+								</a>
+							</div>
+							<div class="video anim" style="--delay: .6s">
+								<a
+									href="../../../../rotary/members-center/admin/media/rotary/toma-compromiso-2022-2023">
+									<div class="video-time">48 fotos</div>
+									<div class="video-wrapper">
+										<img class="portrait-img"
+											src="http://samueldar.io/rotary/members-center/admin/media/rotary/toma-compromiso-2022-2023/assets/DSCF1457.jpg">
+										<!--<video muted="">
+										<source
+											src="https://player.vimeo.com/external/436553499.sd.mp4?s=0e44527f269278743db448761e35c5e39cfaa52c&amp;profile_id=139&amp;oauth2_token_id=57447761"
+											type="video/mp4">
+									</video>-->
+										<div class="author-img__wrapper video-author">
+											<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+												stroke-linecap="round" stroke-linejoin="round"
+												class="feather feather-check">
+												<path d="M20 6L9 17l-5-5"></path>
+											</svg>
+											<img class="author-img"
+												src="../../../../../rotary/assets/images/favicons/favicon-194x194.png?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500">
+										</div>
+									</div>
+									<div class="video-by offline">Rotary Torbes</div>
+									<div class="video-name">Toma de compromiso Junta Directiva 2022-2023</div>
+									<div class="video-view">64 vistas<span class="seperate video-seperate"></span>Hace 2
+										semana</div>
+								</a>
+							</div>
+							<!--<div class="video anim" style="--delay: .7s">
+								<div class="video-time">6 min</div>
+								<div class="video-wrapper">
+									<video muted="">
+										<source
+											src="https://player.vimeo.com/external/361861493.sd.mp4?s=19d8275ca755d653042a87ef28b2f0b2eabf57d0&amp;profile_id=139&amp;oauth2_token_id=57447761"
+											type="video/mp4">
+									</video>
+									<div class="author-img__wrapper video-author">
+										<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+											stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+											<path d="M20 6L9 17l-5-5"></path>
+										</svg>
+										<img class="author-img"
+											src="https://images.pexels.com/photos/2889942/pexels-photo-2889942.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500">
+									</div>
+								</div>
+								<div class="video-by">Budi Hakim</div>
+								<div class="video-name">Tips to playing skateboard on the ramp</div>
+								<div class="video-view">50K views<span class="seperate video-seperate"></span>1 week ago</div>
+							</div>-->
+						</div>
+						<div class="stream-area">
+							<div class="video-stream">
+
+								<div class="anim picture-stream">
+
+								</div>
+
+								<!--<video id="my_video_1" class="video-js vjs-default-skin anim" width="640px" height="267px"
+									controls="" preload="none"
+									poster="https://images.unsplash.com/photo-1476801071117-fbc157ae3f01?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8&amp;w=1000&amp;q=80"
+									data-setup="{ &quot;aspectRatio&quot;:&quot;940:620&quot;, &quot;playbackRates&quot;: [1, 1.5, 2] }">
+									<source
+										src="https://player.vimeo.com/external/390402719.sd.mp4?s=20cfdb066c4253047562b65bd4e411b86a004bc5&amp;profile_id=139&amp;oauth2_token_id=57447761"
+										type="video/mp4">
+									<source
+										src="https://player.vimeo.com/external/390402719.sd.mp4?s=20cfdb066c4253047562b65bd4e411b86a004bc5&amp;profile_id=139&amp;oauth2_token_id=57447761"
+										type="video/webm">
+								</video>-->
+								<div class="video-detail">
+									<div class="video-content">
+										<div class="video-p-wrapper anim" style="--delay: .1s">
+											<div class="author-img__wrapper video-author video-p">
+												<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+													class="feather feather-check">
+													<path d="M20 6L9 17l-5-5"></path>
+												</svg>
+												<img class="author-img"
+													src="https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500">
+											</div>
+											<div class="video-p-detail">
+												<div class="video-p-name">Angel</div>
+												<!--<div class="video-p-sub">1,980,893 subscribers</div>-->
+											</div>
+											<div class="button-wrapper">
+												<button class="like">
+													<svg viewBox="0 0 24 24" fill="currentColor"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M21.435 2.582a1.933 1.933 0 00-1.93-.503L3.408 6.759a1.92 1.92 0 00-1.384 1.522c-.142.75.355 1.704 1.003 2.102l5.033 3.094a1.304 1.304 0 001.61-.194l5.763-5.799a.734.734 0 011.06 0c.29.292.29.765 0 1.067l-5.773 5.8c-.428.43-.508 1.1-.193 1.62l3.075 5.083c.36.604.98.946 1.66.946.08 0 .17 0 .251-.01.78-.1 1.4-.634 1.63-1.39l4.773-16.075c.21-.685.02-1.43-.48-1.943z">
+														</path>
+													</svg>
+													Compartir
+												</button>
+
+											</div>
+										</div>
+										<div class="video-p-title anim" style="--delay: .2s">DANCEND POLIO NOW</div>
+										<div class="video-p-subtitle anim" style="--delay: .3s">Lorem ipsum dolor sit
+											amet
+											consectetur adipisicing elit. Repellendus illum tempora consequuntur. Lorem
+											ipsum dolor sit amet consectetur adipisicing elit. Debitis earum velit
+											accusantium maiores qui sit quas, laborum voluptatibus vero quidem tempore
+											facilis voluptate tempora deserunt! </div>
+										<div class="video-p-subtitle anim" style="--delay: .4s">Lorem ipsum dolor sit
+											amet
+											consectetur adipisicing elit. Temporibus laborum qui dolorum fugiat eius
+											accusantium repellendus illum tempora consequuntur. Lorem ipsum dolor, sit
+											amet
+											consectetur adipisicing elit.</div>
+									</div>
+								</div>
+							</div>
+							<div class="chat-stream">
+								<div class="chat">
+									<div class="chat-header anim">Comentarios</div>
+									<div class="message-container">
+										<div class="message anim" style="--delay: .1s">
+											<div class="author-img__wrapper video-author video-p">
+												<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+													class="feather feather-check">
+													<path d="M20 6L9 17l-5-5"></path>
+												</svg>
+												<img class="author-img"
+													src="https://images.unsplash.com/photo-1560941001-d4b52ad00ecc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1650&amp;q=80">
+											</div>
+											<div class="msg-wrapper">
+												<div class="msg__name chat-p-name">Belinda</div>
+												<div class="msg__content video-p-sub"> Lorem ipsum clor sit, ame conse
+													quae
+													debitis</div>
+											</div>
+										</div>
+										<div class="message anim" style="--delay: .2s">
+											<div class="author-img__wrapper video-author video-p">
+												<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+													class="feather feather-check">
+													<path d="M20 6L9 17l-5-5"></path>
+												</svg>
+												<img class="author-img"
+													src="https://images.pexels.com/photos/2889942/pexels-photo-2889942.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500">
+											</div>
+											<div class="msg-wrapper">
+												<div class="msg__name chat-p-name offline"> Gerardo</div>
+												<div class="msg__content video-p-sub"> Suscipit eos atque voluptates
+													labore
+												</div>
+											</div>
+										</div>
+										<div class="message anim" style="--delay: .3s">
+											<div class="author-img__wrapper video-author video-p">
+												<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+													class="feather feather-check">
+													<path d="M20 6L9 17l-5-5"></path>
+												</svg>
+												<img class="author-img"
+													src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fG1lbnxlbnwwfHwwfA%3D%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60">
+											</div>
+											<div class="msg-wrapper">
+												<div class="msg__name chat-p-name offline"> David</div>
+												<div class="msg__content video-p-sub">Dicta quidem sunt adipisci</div>
+											</div>
+										</div>
+										<div class="message anim" style="--delay: .4s">
+											<div class="author-img__wrapper video-author video-p">
+												<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+													class="feather feather-check">
+													<path d="M20 6L9 17l-5-5"></path>
+												</svg>
+												<img class="author-img"
+													src="https://images.pexels.com/photos/1870163/pexels-photo-1870163.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500">
+											</div>
+											<div class="msg-wrapper">
+												<div class="msg__name chat-p-name"> Belinda</div>
+												<div class="msg__content video-p-sub"> recusandae doloremque aperiam
+													alias
+													molestias</div>
+											</div>
+										</div>
+										<div class="message anim" style="--delay: .5s">
+											<div class="author-img__wrapper video-author video-p">
+												<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+													class="feather feather-check">
+													<path d="M20 6L9 17l-5-5"></path>
+												</svg>
+												<img class="author-img"
+													src="https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500">
+											</div>
+											<div class="msg-wrapper">
+												<div class="msg__name chat-p-name"> Gerardo</div>
+												<div class="msg__content video-p-sub">Dicta quidem sunt adipisci</div>
+											</div>
+										</div>
+										<div class="message anim" style="--delay: .6s">
+											<div class="author-img__wrapper video-author video-p">
+												<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+													stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+													class="feather feather-check">
+													<path d="M20 6L9 17l-5-5"></path>
+												</svg>
+												<img class="author-img"
+													src="https://images.pexels.com/photos/2889942/pexels-photo-2889942.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500">
+											</div>
+											<div class="msg-wrapper">
+												<div class="msg__name chat-p-name offline">Samuel</div>
+												<div class="msg__content video-p-sub"> recusandae doloremque aperiam
+													alias
+													molestias</div>
+											</div>
+										</div>
+									</div>
+									<div class="chat-footer anim" style="--delay: .1s">
+										<input type="text" placeholder="Escribe tu comentario">
+									</div>
+								</div>
+								<div class="chat-vid__container">
+									<div class="chat-vid__title anim" style="--delay: .3s">Próximos Eventos</div>
+									<div class="chat-vid anim" style="--delay: .4s">
+										<div class="chat-vid__wrapper">
+											<img class="chat-vid__img"
+												src="http://samueldar.io/rotary/members-center/admin/dashboard/assets/navidad-contigo.jpg">
+											<div class="chat-vid__content">
+												<div class="chat-vid__name">Navidad Contigo</div>
+												<div class="chat-vid__by">Rotary Torbes</div>
+												<div class="chat-vid__info">última actualización <span
+														class="seperate"></span>hace 2
+													días</div>
+											</div>
+										</div>
+									</div>
+									<div class="chat-vid anim" style="--delay: .5s">
+										<div class="chat-vid__wrapper">
+											<img class="chat-vid__img"
+												src="http://samueldar.io/rotary/members-center/admin/dashboard/assets/end-polio-now.webp">
+											<div class="chat-vid__content">
+												<div class="chat-vid__name">DANCEND POLIO NOW</div>
+												<div class="chat-vid__by">Rotaract Torbes</div>
+												<div class="chat-vid__info">última actualización <span
+														class="seperate"></span> hace 2
+													días</div>
+											</div>
+										</div>
+									</div>
+									<div class="chat-vid__button anim" style="--delay: .6s">Ver todos los eventos
+										próximos
+										(32)
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--<div class="sidebar-dashboard">
+						hola mundo
+					</div>-->
+				</div>
+
+
+			</div>
+		</main>
+	</div>
+	<!-- partial -->
+	<script src="../../../rotary/members-center/admin/dashboard/script.js"></script>
+
+</body>
+
+</html>

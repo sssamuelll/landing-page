@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rotary Torbes</title>
+
+    <link rel="apple-touch-icon" sizes="57x57"
+        href="../../../../../rotary/assets/images/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="../../../../../rotary/assets/images/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+        href="../../../../../rotary/assets/images/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+        href="../../../../../rotary/assets/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+        href="../../../../../rotary/assets/images/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+        href="../../../../../rotary/assets/images/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+        href="../../../../../rotary/assets/images/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="../../../../../rotary/assets/images/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="../../../../../rotary/assets/images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="../../../../../rotary/assets/images/favicons/favicon-32x32.png"
+        sizes="32x32">
+    <link rel="icon" type="image/png" href="../../../../../rotary/assets/images/favicons/favicon-194x194.png"
+        sizes="194x194">
+    <link rel="icon" type="image/png" href="../../../../../rotary/assets/images/favicons/favicon-96x96.png"
+        sizes="96x96">
+    <link rel="icon" type="image/png" href="../../../../../rotary/assets/images/favicons/android-chrome-192x192.png"
+        sizes="192x192" class="__web-inspector-hide-shortcut__">
+    <link rel="icon" type="image/png" href="../../../../../rotary/assets/images/favicons/favicon-16x16.png"
+        sizes="16x16">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="../../../../../rotary/members-center/admin/media/style.css">
+    <link rel="stylesheet" href="../../../../../rotary/members-center/admin/media/media.css">
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+    <!-- left click pop -->
+    <div id="contextMenu" class="container-right" style="display:none">
+        <!-- code here -->
+        <div class="menu">
+            <ul class="menu-list">
+                <li class="menu-item"><button class="menu-button"><i
+                            data-feather="corner-up-right"></i>Compartir</button>
+                </li>
+                <li class="menu-item"><button class="menu-button"><i data-feather="edit-2"></i>Renombrar</button></li>
+            </ul>
+            <ul class="menu-list">
+                <!--<li class="menu-item"><button class="menu-button menu-button--black"><i data-feather="circle"></i>Establecer como<i data-feather="chevron-right"></i></button>
+					<ul class="menu-sub-list">
+						<li class="menu-item"><button class="menu-button menu-button--orange"><i
+									data-feather="square"></i>Foto de portada</button></li>
+						<li class="menu-item"><button class="menu-button menu-button--purple"><i
+									data-feather="octagon"></i>In progress</button></li>
+						<li class="menu-item"><button class="menu-button menu-button--green"><i
+									data-feather="triangle"></i>Approved</button></li>
+						<li class="menu-item"><button class="menu-button menu-button--black menu-button--checked"><i
+									data-feather="circle"></i>No status<i data-feather="check"></i></button></li>
+					</ul>
+				</li>-->
+                <li class="menu-item"><button class="menu-button"><i data-feather="folder"></i>Foto de portada</button>
+                </li>
+                <li class="menu-item"><button class="menu-button"><i data-feather="link"></i>Copiar el Link URL</button>
+                </li>
+                <li class="menu-item"><button class="menu-button"><i data-feather="folder-plus"></i>Mover</button>
+                </li>
+                <li class="menu-item"><button class="menu-button"><i data-feather="copy"></i>Copiar</button></li>
+                <li class="menu-item"><button class="menu-button"><i data-feather="lock"></i>Hacerla privada</button>
+                </li>
+                <li class="menu-item"><button class="menu-button"><i data-feather="download"></i>Descargar</button></li>
+            </ul>
+            <ul class="menu-list">
+                <li class="menu-item"><button class="menu-button menu-button--delete"><i
+                            data-feather="trash-2"></i>Enviar a la papelera</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal Uploader -->
+    <div id="defaultModal" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                        Sube uno o varios archivos
+                    </h3>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-toggle="defaultModal">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="sr-only">Cerrar modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+
+                <!-- file upload modal -->
+                <article aria-label="File Upload Modal" class="relative h-full flex flex-col bg-white rounded-md"
+                    ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"
+                    ondragleave="dragLeaveHandler(event);" ondragenter="dragEnterHandler(event);">
+                    <!-- overlay -->
+                    <div id="overlay"
+                        class="w-full h-full absolute top-0 left-0 pointer-events-none z-50 flex flex-col items-center justify-center rounded-md">
+                        <i>
+                            <svg class="fill-current w-12 h-12 mb-3 text-blue-700" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M19.479 10.092c-.212-3.951-3.473-7.092-7.479-7.092-4.005 0-7.267 3.141-7.479 7.092-2.57.463-4.521 2.706-4.521 5.408 0 3.037 2.463 5.5 5.5 5.5h13c3.037 0 5.5-2.463 5.5-5.5 0-2.702-1.951-4.945-4.521-5.408zm-7.479-1.092l4 4h-3v4h-2v-4h-3l4-4z" />
+                            </svg>
+                        </i>
+                        <p class="text-lg text-blue-700">Drop files to upload</p>
+                    </div>
+
+                    <!-- scroll area -->
+                    <section class="h-full overflow-auto p-8 w-full h-full flex flex-col">
+                        <header
+                            class="border-dashed border-2 border-gray-400 py-12 flex flex-col justify-center items-center">
+                            <p class="mb-3 font-semibold text-gray-900 flex flex-wrap justify-center">
+                                <span>Arrastre y suelte sus</span>&nbsp;<span>archivos en cualquier lugar de este
+                                    recuadro o</span>
+                            </p>
+                            <input id="hidden-input" type="file" multiple class="hidden" />
+                            <button id="button"
+                                class="mt-2 rounded-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 focus:shadow-outline focus:outline-none">
+                                Sube un archivo
+                            </button>
+                        </header>
+
+                        <h1 class="pt-8 pb-3 font-semibold sm:text-lg text-gray-900">
+                            Por subir
+                        </h1>
+
+                        <!-- image gallery  -->
+                        <ul id="gallery" class="flex flex-1 flex-wrap -m-1">
+                            <li id="empty"
+                                class="h-full w-full text-center flex flex-col items-center justify-center items-center">
+                                <img class="mx-auto w-32" src="" alt="no hay archivos" />
+                                <span class="text-small text-gray-500">No has seleccionado ningun archivo</span>
+                            </li>
+                        </ul>
+                    </section>
+
+
+
+                </article>
+
+                <!-- using two similar templates for simplicity in js code -->
+                <template id="file-template">
+                    <li class="block p-1 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-1/8 h-24">
+                        <article tabindex="0"
+                            class="group w-full h-full rounded-md focus:outline-none focus:shadow-outline elative bg-gray-100 cursor-pointer relative shadow-sm">
+                            <img alt="upload preview"
+                                class="img-preview hidden w-full h-full sticky object-cover rounded-md bg-fixed" />
+
+                            <section
+                                class="flex flex-col rounded-md text-xs break-words w-full h-full z-20 absolute top-0 py-2 px-3">
+                                <h1 class="flex-1 group-hover:text-blue-800"></h1>
+                                <div class="flex">
+                                    <span class="p-1 text-blue-800">
+                                        <i>
+                                            <svg class="fill-current w-4 h-4 ml-auto pt-1"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24">
+                                                <path d="M15 2v5h5v15h-16v-20h11zm1-2h-14v24h20v-18l-6-6z" />
+                                            </svg>
+                                        </i>
+                                    </span>
+                                    <p class="p-1 size text-xs text-gray-700"></p>
+                                    <button
+                                        class="delete ml-auto focus:outline-none hover:bg-gray-300 p-1 rounded-md text-gray-800">
+                                        <svg class="pointer-events-none fill-current w-4 h-4 ml-auto"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24">
+                                            <path class="pointer-events-none"
+                                                d="M3 6l3 18h12l3-18h-18zm19-4v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.316c0 .901.73 2 1.631 2h5.711z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </section>
+                        </article>
+                    </li>
+                </template>
+
+                <template id="image-template">
+                    <li class="block p-1 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-1/8 h-24">
+                        <article tabindex="0"
+                            class="group hasImage w-full h-full rounded-md focus:outline-none focus:shadow-outline bg-gray-100 cursor-pointer relative text-transparent hover:text-white shadow-sm">
+                            <img alt="upload preview"
+                                class="img-preview w-full h-full sticky object-cover rounded-md bg-fixed" />
+
+                            <section
+                                class="flex flex-col rounded-md text-xs break-words w-full h-full z-20 absolute top-0 py-2 px-3">
+                                <h1 class="flex-1"></h1>
+                                <div class="flex">
+                                    <span class="p-1">
+                                        <i>
+                                            <svg class="fill-current w-4 h-4 ml-auto pt-"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M5 8.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5zm9 .5l-2.519 4-2.481-1.96-4 5.96h14l-5-8zm8-4v14h-20v-14h20zm2-2h-24v18h24v-18z" />
+                                            </svg>
+                                        </i>
+                                    </span>
+
+                                    <p class="p-1 size text-xs"></p>
+                                    <button class="delete ml-auto focus:outline-none hover:bg-gray-300 p-1 rounded-md">
+                                        <svg class="pointer-events-none fill-current w-4 h-4 ml-auto"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24">
+                                            <path class="pointer-events-none"
+                                                d="M3 6l3 18h12l3-18h-18zm19-4v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.316c0 .901.73 2 1.631 2h5.711z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </section>
+                        </article>
+                    </li>
+                </template>
+
+                <!-- Modal footer -->
+                <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                    <button id="submit" data-modal-toggle="defaultModal"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Subir archivo(s)
+                    </button>
+                    <button id="cancel" data-modal-toggle="defaultModal"
+                        class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
+                        Cancelar
+                    </button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- partial:index.partial.html -->
+    <div class="window" id="window">
+        <header class="window-header">
+            <nav class="navigation">
+                <div class="navigation-top">
+                    <a href="../../../../../rotary/members-center/admin/dashboard" class="navigation-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9.5L12 4L21 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M19 13V19.4C19 19.7314 18.7314 20 18.4 20H5.6C5.26863 20 5 19.7314 5 19.4V13"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span class="navigation-item-title">Dashboard</span>
+                    </a>
+                    <a href="../../../../../rotary/members-center/admin/pages" class="navigation-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.6 3H20.4C20.7314 3 21 3.26863 21 3.6V20.4C21 20.7314 20.7314 21 20.4 21H3.6C3.26863 21 3 20.7314 3 20.4V3.6C3 3.26863 3.26863 3 3.6 3Z"
+                                stroke="currentColor" stroke-width="1.5" />
+                            <path d="M9.75 9.75V21" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M3 9.75H21" stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+                        <span class="navigation-item-title">Paginas</span>
+                    </a>
+                    <a href="" class="navigation-item active">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.6954 7.18536L11.6954 11.1854L12.3046 9.81464L3.3046 5.81464L2.6954 7.18536ZM12.75 21.5V10.5H11.25V21.5H12.75ZM12.3046 11.1854L21.3046 7.18536L20.6954 5.81464L11.6954 9.81464L12.3046 11.1854Z"
+                                fill="currentColor" />
+                            <path
+                                d="M3 17.1101V6.88992C3 6.65281 3.13964 6.43794 3.35632 6.34164L11.7563 2.6083C11.9115 2.53935 12.0885 2.53935 12.2437 2.6083L20.6437 6.34164C20.8604 6.43794 21 6.65281 21 6.88992V17.1101C21 17.3472 20.8604 17.5621 20.6437 17.6584L12.2437 21.3917C12.0885 21.4606 11.9115 21.4606 11.7563 21.3917L3.35632 17.6584C3.13964 17.5621 3 17.3472 3 17.1101Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M7.5 4.5L16.1437 8.34164C16.3604 8.43794 16.5 8.65281 16.5 8.88992V12.5"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span class="navigation-item-title">Banco de Imagenes y Videos</span>
+
+                    </a>
+                    <a href="../../../../../rotary/members-center/admin/press-center" class="navigation-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M8 21.1679V14L12 7L16 14V21.1679" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M8 14C8 14 9.12676 15 10 15C10.8732 15 12 14 12 14C12 14 13.1268 15 14 15C14.8732 15 16 14 16 14"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span class="navigation-item-title">Centro de prensa</span>
+
+                    </a>
+                    <a href="" class="navigation-item navigation-item--notification">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18 8.4C18 6.70261 17.3679 5.07475 16.2426 3.87452C15.1174 2.67428 13.5913 2 12 2C10.4087 2 8.88258 2.67428 7.75736 3.87452C6.63214 5.07475 6 6.70261 6 8.4C6 15.8667 3 18 3 18H21C21 18 18 15.8667 18 8.4Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span class="navigation-item-title">Reúniones semanales</span>
+
+                    </a>
+                </div>
+                <div class="navigation-bottom">
+                    <a href="#" class="navigation-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M19.6224 10.3954L18.5247 7.7448L20 6L18 4L16.2647 5.48295L13.5578 4.36974L12.9353 2H10.981L10.3491 4.40113L7.70441 5.51596L6 4L4 6L5.45337 7.78885L4.3725 10.4463L2 11V13L4.40111 13.6555L5.51575 16.2997L4 18L6 20L7.79116 18.5403L10.397 19.6123L11 22H13L13.6045 19.6132L16.2551 18.5155C16.6969 18.8313 18 20 18 20L20 18L18.5159 16.2494L19.6139 13.598L21.9999 12.9772L22 11L19.6224 10.3954Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+
+                        <span class="navigation-item-title">Ajustes</span>
+                    </a>
+                    <a href="#" class="navigation-item">
+                        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="80" height="80"
+                            colors="#b2cba3,#e0df9f,#e7a83e,#9a736e,#ea525f" name="Babe Didrikson" size="80"
+                            class="avatar">
+                            <mask id="mask__beam" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36">
+                                <rect width="36" height="36" rx="20" fill="white"></rect>
+                            </mask>
+                            <g mask="url(#mask__beam)" fill="transparent">
+                                <rect width="36" height="36" rx="20" fill="#e7a83e"></rect>
+                                <rect x="0" y="0" width="36" height="36"
+                                    transform="translate(-5 9) rotate(249 18 18) scale(1)" fill="#ea525f" rx="36">
+                                </rect>
+                                <g transform="translate(-1 4.5) rotate(9 18 18)">
+                                    <path d="M13,19 a1,0.75 0 0,0 10,0" fill="black"></path>
+                                    <rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="black">
+                                    </rect>
+                                    <rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="black">
+                                    </rect>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="navigation-item-title">Tu Perfil</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <div class="window-panel" id="windowPanel">
+            <h2 class="section-title">
+                Explorar
+            </h2>
+            <div class="search">
+                <input type="type" class="search-input" placeholder="Busqueda..." />
+            </div>
+            <ul class="tree">
+                <li class="tree-branch">
+                    <div class="tree-branch-action">
+                        <a href="#" class="tree-branch-link active">Rotary</a>
+                        <button class="tree-branch-button">+</button>
+                    </div>
+                    <ul class="tree tree--sub">
+                        <li class="tree-branch tree-branch--sub">
+                            <div class="tree-branch-action">
+                                <a href="../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023"
+                                    class="tree-branch-link tree-branch-link--sub ">1era reunión ordinaria
+                                    2022-2023</a>
+                                <button class="tree-branch-button">+</button>
+                            </div>
+                        </li>
+                        <li class="tree-branch tree-branch--sub">
+                            <div class="tree-branch-action">
+                                <a href="../../../../rotary/members-center/admin/media/rotary/conversatorio-advocaciones-virgen-maria"
+                                    class="tree-branch-link tree-branch-link--sub">Conversatorio con Desiree Gonzalez
+                                    advocaciones de la virgen en Venezuela</a>
+                                <button class="tree-branch-button">+</button>
+                            </div>
+                        </li>
+                        <li class="tree-branch tree-branch--sub">
+                            <div class="tree-branch-action">
+                                <a href="../../../../rotary/members-center/admin/media/rotary/toma-compromiso-2022-2023"
+                                    class="tree-branch-link tree-branch-link--sub">Toma de compromiso Junta Directiva
+                                    2022-2023</a>
+                                <button class="tree-branch-button">+</button>
+                            </div>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="tree-branch">
+                    <div class="tree-branch-action">
+                        <a href="#" class="tree-branch-link">Rotaract</a>
+                        <button class="tree-branch-button">+</button>
+                    </div>
+                    <ul class="tree tree--sub">
+                        <li class="tree-branch tree-branch--sub">
+                            <div class="tree-branch-action">
+                                <a href="../../../rotary/members-center/admin/media/rotaract/danc-end-polio-now"
+                                    class="tree-branch-link tree-branch-link--sub">DANC-END POLIO NOW</a>
+                                <button class="tree-branch-button">+</button>
+                            </div>
+
+                        <li class="tree-branch tree-branch--sub">
+                            <div class="tree-branch-action">
+                                <a href="../../../rotary/members-center/admin/media/rotaract/yo-limpio"
+                                    class="tree-branch-link tree-branch-link--sub">#YoLimpio</a>
+                                <button class="tree-branch-button">+</button>
+                            </div>
+                        </li>
+                        <li class="tree-branch tree-branch--sub">
+                            <div class="tree-branch-action">
+                                <a href="../../../rotary/members-center/admin/media/rotaract/seminario-binacional-fundacion-rotaria"
+                                    class="tree-branch-link tree-branch-link--sub">Seminario Binacional Fundación
+                                    Rotaria</a>
+                                <button class="tree-branch-button">+</button>
+                            </div>
+                        </li>
+                        <li class="tree-branch tree-branch--sub">
+                            <div class="tree-branch-action">
+                                <a href="../../../rotary/members-center/admin/media/rotaract/induccion-rotaria"
+                                    class="tree-branch-link tree-branch-link--sub">Inducción Rotaria Planificación en
+                                    Rotary</a>
+                                <button class="tree-branch-button">+</button>
+                            </div>
+                        </li>
+                        <li class="tree-branch tree-branch--sub">
+                            <div class="tree-branch-action">
+                                <a href="../../../rotary/members-center/admin/media/rotaract/58-social-fest"
+                                    class="tree-branch-link tree-branch-link--sub">+58 Social Fest</a>
+                                <button class="tree-branch-button">+</button>
+                            </div>
+                        </li>
+
+                </li>
+            </ul>
+            </li>
+            <li class="tree-branch tree-branch--sub">
+                <div class="tree-branch-action">
+                    <a href="#" class="tree-branch-link tree-branch-link--sub">Interact</a>
+                    <button class="tree-branch-button">+</button>
+                </div>
+                <ul class="tree tree--sub">
+                    <li class="tree-branch tree-branch--sub">
+                        <div class="tree-branch-action">
+                            <a href="../../../rotary/members-center/admin/media/interact/jornarepa"
+                                class="tree-branch-link tree-branch-link--sub">Jornarepa</a>
+                            <button class="tree-branch-button">+</button>
+                        </div>
+                    </li>
+                    <li class="tree-branch tree-branch--sub">
+                        <div class="tree-branch-action">
+                            <a href="../../../rotary/members-center/admin/media/interact/capacitacion-imagen-publica"
+                                class="tree-branch-link tree-branch-link--sub">Capacitación De Imagen Pública</a>
+                            <button class="tree-branch-button">+</button>
+                        </div>
+                    </li>
+                    <li class="tree-branch tree-branch--sub">
+                        <div class="tree-branch-action">
+                            <a href="../../../rotary/members-center/admin/media/interact/torneo-deportivo-iii-edicion"
+                                class="tree-branch-link tree-branch-link--sub">Torneo Deportivo III Edición</a>
+                            <button class="tree-branch-button">+</button>
+                        </div>
+                    </li>
+
+                </ul>
+            </li>
+
+            </ul>
+        </div>
+        <main class="window-main" id="windowMain">
+            <div class="window-main-header">
+                <div class="header-left">
+                    <button aria-label="Ampliar Galería" class="ampliar-button" id="galleryFullscreen" type="button">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="svg-ampliar">
+                            <path id="ampliarPath" fill-rule="evenodd"
+                                d="M6.031 3a3 3 0 00-3 3v11a3 3 0 003 3h11a3 3 0 003-3V6a3 3 0 00-3-3h-11zm4.47 4.289H8.184l2.915 2.914a.625.625 0 01-.884.884L7.3 8.172v2.319a.625.625 0 11-1.25 0V6.674c0-.351.285-.635.635-.635h3.818a.625.625 0 010 1.25zM12.6 15.76h2.318l-2.915-2.915a.625.625 0 11.884-.884l2.915 2.915V12.56a.625.625 0 011.25 0v3.817c0 .35-.285.635-.635.635H12.6a.625.625 0 110-1.25z">
+                            </path>
+                            <path id="reducirPath" fill-rule="evenodd"
+                                d="M6 3a3 3 0 00-3 3v11a3 3 0 003 3h11a3 3 0 003-3V6a3 3 0 00-3-3H6zm2.864 6.78H6.546a.625.625 0 100 1.25h3.817c.35 0 .635-.285.635-.636V6.577a.625.625 0 00-1.25 0v2.319L6.833 5.98a.625.625 0 00-.884.883L8.864 9.78zm5.299 3.468h2.318a.625.625 0 100-1.25h-3.817a.635.635 0 00-.635.635v3.817a.625.625 0 101.25 0V14.13l2.915 2.915a.625.625 0 10.884-.884l-2.915-2.914z"
+                                style="display: none;"></path>
+                        </svg>
+                    </button>
+                    <ol class="breadcrumbs">
+                        <li class="breadcrumbs-item"><a href="../../../members-center/admin/media/rotary">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M2.6954 7.18536L11.6954 11.1854L12.3046 9.81464L3.3046 5.81464L2.6954 7.18536ZM12.75 21.5V10.5H11.25V21.5H12.75ZM12.3046 11.1854L21.3046 7.18536L20.6954 5.81464L11.6954 9.81464L12.3046 11.1854Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M3 17.1101V6.88992C3 6.65281 3.13964 6.43794 3.35632 6.34164L11.7563 2.6083C11.9115 2.53935 12.0885 2.53935 12.2437 2.6083L20.6437 6.34164C20.8604 6.43794 21 6.65281 21 6.88992V17.1101C21 17.3472 20.8604 17.5621 20.6437 17.6584L12.2437 21.3917C12.0885 21.4606 11.9115 21.4606 11.7563 21.3917L3.35632 17.6584C3.13964 17.5621 3 17.3472 3 17.1101Z"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path d="M7.5 4.5L16.1437 8.34164C16.3604 8.43794 16.5 8.65281 16.5 8.88992V12.5"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                                Rotary</a></li>
+
+                    </ol>
+                </div>
+
+                <!--<div class="publish-actions">
+					<div class="publish-info">
+						<span>ÚLTIMA EDICIÓN<br />
+							hace 2 minutos</span>
+					</div>
+					
+				<button class="button button--save">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M3 19V5C3 3.89543 3.89543 3 5 3H16.1716C16.702 3 17.2107 3.21071 17.5858 3.58579L20.4142 6.41421C20.7893 6.78929 21 7.29799 21 7.82843V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19Z" stroke="currentColor" stroke-width="1.5" />
+						<path d="M8.6 9H15.4C15.7314 9 16 8.73137 16 8.4V3.6C16 3.26863 15.7314 3 15.4 3H8.6C8.26863 3 8 3.26863 8 3.6V8.4C8 8.73137 8.26863 9 8.6 9Z" stroke="currentColor" stroke-width="1.5" />
+						<path d="M6 13.6V21H18V13.6C18 13.2686 17.7314 13 17.4 13H6.6C6.26863 13 6 13.2686 6 13.6Z" stroke="currentColor" stroke-width="1.5" />
+					</svg>
+					Guardar
+				</button>-->
+                <button class="button button--schedule">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M15 4V2M15 4V6M15 4H10.5M3 10V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V10H3Z"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3 10V6C3 4.89543 3.89543 4 5 4H7" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M7 2V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M21 10V6C21 4.89543 20.1046 4 19 4H18.5" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Crear nueva carpeta
+                </button>
+
+            </div>
+
+            <div class="window-main-body">
+
+                <div class="videos">
+                    <div class="video anim" style="--delay: .4s">
+                        <a href="../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023">
+                        <div class="video-time">11 fotos</div>
+                        <div class="video-wrapper">
+                            <img class="portrait-first-img" id="firstImage" src="http://samueldar.io/rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_183718.jpeg">
+                            <!--<video muted="">
+                                <source
+                                    src="https://player.vimeo.com/external/436572488.sd.mp4?s=eae5fb490e214deb9ff532dd98d101efe94e7a8b&amp;profile_id=139&amp;oauth2_token_id=57447761"
+                                    type="video/mp4">
+                            </video>-->
+                            <div class="author-img__wrapper video-author">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                                <img class="author-img"
+                                    src="../../../../../rotary/assets/images/favicons/favicon-194x194.png?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500">
+                            </div>
+                        </div>
+                        <div class="video-by">Rotary Torbes</div>
+                        <div class="video-name">1era reunión ordinaria 2022-2023</div>
+                        <div class="video-view">54 vistas<span class="seperate video-seperate"></span>Hace 1 semana</div>
+                        </a>
+                    </div>
+                    <div class="video anim" style="--delay: .5s">
+                        <a href="../../../../rotary/members-center/admin/media/rotary/conversatorio-advocaciones-virgen-maria">
+                            <div class="video-time">9 fotos</div>
+                            <div class="video-wrapper">
+                                <img class="portrait-img" src="http://samueldar.io/rotary/members-center/admin/media/rotary/conversatorio-advocaciones-virgen-maria/assets/122513.jpg">
+                                <!--<video muted="">
+                                    <source
+                                        src="https://player.vimeo.com/external/449972745.sd.mp4?s=9943177fe8a6147b7bc4598259401f06ec57878a&amp;profile_id=139&amp;oauth2_token_id=57447761"
+                                        type="video/mp4">
+                                </video>-->
+                                <div class="author-img__wrapper video-author">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+                                        <path d="M20 6L9 17l-5-5"></path>
+                                    </svg>
+                                    <img class="author-img"
+                                        src="../../../../../rotary/assets/images/favicons/favicon-194x194.png?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500">
+                                </div>
+                            </div>
+                            <div class="video-by offline">Rotary Torbes</div>
+                            <div class="video-name">Conversatorio con Desiree Gonzalez advocaciones de la virgen en
+                                Venezuela</div>
+                            <div class="video-view">42 vistas<span class="seperate video-seperate"></span>Hace 1 semana</div>
+                        </a>
+                    </div>
+                    <div class="video anim" style="--delay: .6s">
+                        <a href="../../../../rotary/members-center/admin/media/rotary/toma-compromiso-2022-2023">
+                        <div class="video-time">48 fotos</div>
+                        <div class="video-wrapper">
+                            <img class="portrait-img" src="http://samueldar.io/rotary/members-center/admin/media/rotary/toma-compromiso-2022-2023/assets/DSCF1457.jpg">
+                            <!--<video muted="">
+                                <source
+                                    src="https://player.vimeo.com/external/436553499.sd.mp4?s=0e44527f269278743db448761e35c5e39cfaa52c&amp;profile_id=139&amp;oauth2_token_id=57447761"
+                                    type="video/mp4">
+                            </video>-->
+                            <div class="author-img__wrapper video-author">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                                <img class="author-img"
+                                    src="../../../../../rotary/assets/images/favicons/favicon-194x194.png?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500">
+                            </div>
+                        </div>
+                        <div class="video-by offline">Rotary Torbes</div>
+                        <div class="video-name">Toma de compromiso Junta Directiva 2022-2023</div>
+                        <div class="video-view">64 vistas<span class="seperate video-seperate"></span>Hace 2 semana</div>
+                        </a>
+                    </div>
+                    <!--<div class="video anim" style="--delay: .7s">
+                        <div class="video-time">6 min</div>
+                        <div class="video-wrapper">
+                            <video muted="">
+                                <source
+                                    src="https://player.vimeo.com/external/361861493.sd.mp4?s=19d8275ca755d653042a87ef28b2f0b2eabf57d0&amp;profile_id=139&amp;oauth2_token_id=57447761"
+                                    type="video/mp4">
+                            </video>
+                            <div class="author-img__wrapper video-author">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-check">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                                <img class="author-img"
+                                    src="https://images.pexels.com/photos/2889942/pexels-photo-2889942.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500">
+                            </div>
+                        </div>
+                        <div class="video-by">Budi Hakim</div>
+                        <div class="video-name">Tips to playing skateboard on the ramp</div>
+                        <div class="video-view">50K views<span class="seperate video-seperate"></span>1 week ago</div>
+                    </div>-->
+                </div>
+
+                <!--
+				<div class="container">
+					<div class="gallery">
+						<div  class="gallery-item">
+							<a href="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_183718.jpeg"
+								data-toggle="lightbox" data-gallery="gallery">
+								<img class="gallery-image" loading="lazy"
+									src="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_183718.jpeg"
+									alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer">
+							</a>
+						</div>
+
+						<div  class="gallery-item">
+							<a href="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_183739.jpeg"
+								data-toggle="lightbox" data-gallery="gallery">
+								<img class="gallery-image" loading="lazy"
+									src="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_183739.jpeg"
+									alt="sunset behind San Francisco city skyline">
+							</a>
+						</div>
+
+						<div  class="gallery-item">
+							<a href="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_183919.jpeg"
+								data-toggle="lightbox" data-gallery="gallery">
+							<img class="gallery-image" loading="lazy"
+								src="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_183919.jpeg"
+								alt="people holding umbrellas on a busy street at night lit by street lights and illuminated signs in Tokyo, Japan">
+							</a>
+						</div>
+
+						<div  class="gallery-item">
+							<a href="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_184025.jpeg"
+								data-toggle="lightbox" data-gallery="gallery">
+							<img class="gallery-image" loading="lazy"
+								src="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_184025.jpeg"
+								alt="car interior from central back seat position showing driver and blurred view through windscreen of a busy road at night">
+							</a>
+						</div>
+
+						<div  class="gallery-item">
+							<a href="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_190712.jpeg"
+								data-toggle="lightbox" data-gallery="gallery">
+							<img class="gallery-image" loading="lazy"
+								src="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_190712.jpeg"
+								alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA">
+							</a>
+						</div>
+
+						<div  class="gallery-item">
+							<a href="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_190715.jpeg"
+								data-toggle="lightbox" data-gallery="gallery">
+							<img class="gallery-image" loading="lazy"
+								src="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_190715.jpeg"
+								alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp">
+								</a>
+						</div>
+
+						<div  class="gallery-item">
+							<a href="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_190721.jpeg"
+								data-toggle="lightbox" data-gallery="gallery">
+							<img class="gallery-image" loading="lazy"
+								src="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_190721.jpeg"
+								alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA">
+							</a>
+						</div>
+
+						<div  class="gallery-item">
+							<a href="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_190729.jpeg"
+								data-toggle="lightbox" data-gallery="gallery">
+							<img class="gallery-image" loading="lazy"
+								src="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_190729.jpeg"
+								alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp">
+								</a>
+						</div>
+
+						<div  class="gallery-item">
+							<a href="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_190802.jpeg"
+								data-toggle="lightbox" data-gallery="gallery">
+							<img class="gallery-image" loading="lazy"
+								src="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_190802.jpeg"
+								alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer">
+							</a>
+						</div>
+
+						<div  class="gallery-item">
+							<a href="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_193900.jpeg"
+								data-toggle="lightbox" data-gallery="gallery">
+							<img class="gallery-image" loading="lazy"
+								src="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_193900.jpeg"
+								alt="sunset behind San Francisco city skyline">
+								</a>
+						</div>
+
+						<div  class="gallery-item">
+							<a href="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_194022.jpeg"
+								data-toggle="lightbox" data-gallery="gallery">
+							<img class="gallery-image" loading="lazy"
+								src="../../../../../rotary/members-center/admin/media/rotary/1era-reunion-ordinaria-2022-2023/assets/20220719_194022.jpeg"
+								alt="people holding umbrellas on a busy street at night lit by street lights and illuminated signs in Tokyo, Japan">
+							</a>
+						</div>
+					</div>
+				</div>
+                -->
+
+            </div>
+        </main>
+    </div>
+    <!-- partial -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+
+    <script src="../../../../../rotary/members-center/admin/media/script.js"></script>
+    <script src="../../../../../rotary/members-center/admin/media/media.js"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
+
+</body>
+
+</html>
